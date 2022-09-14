@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/Irina-pi/if-js#readme",
   "devDependencies": {
-    "eslint": "^8.23.0",
+    "eslint": "8.22.0",
     "husky": "^8.0.1",
     "prettier": "2.7.1"
   }
