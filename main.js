@@ -118,5 +118,4 @@ const zero = function () {
         }
     }
 };
-
 zero (arr167str);
