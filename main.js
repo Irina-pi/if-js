@@ -95,22 +95,28 @@ const max = function (a, y) {
 
 console.log(max(num5, num10));
 
-const minmax = (num5 > num10) ? num10 : num5;
+const min2 = (num5 > num10) ? num10 : num5;
 
-console.log(minmax);
+console.log(min2);
 
 //task 16.7
 let arr167 = [5, 20, 54, 26, 70, 60, 0, 56, 0, 1];
+let arr167str = arr167.join(', ');
 let x;
 let y;
-for (let i = 0; i < arr167.length; i++) {
-    x = arr167[i] % 10;
-    if (x === 0 && arr167[i] !== 0) {
-        y = arr167[i] / 10;
-        console.log([y + 'zero']);
-    } else if (arr167[i] === 0) {
+
+const zero = function () {
+    for (let i = 0; i < arr167.length; i++) {
+        x = arr167[i] % 10;
+        if (x === 0 && arr167[i] !== 0) {
+            y = arr167[i] / 10;
+            console.log([y + 'zero']);
+        } else if (arr167[i] === 0) {
             console.log(['zero']);
         } else {
-        console.log([arr167[i]]);
+            console.log([arr167[i]]);
+        }
     }
-}
+};
+
+zero (arr167str);
