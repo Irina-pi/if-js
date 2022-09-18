@@ -17,20 +17,21 @@ test = test + '1'; /*21*/
 
 console.log(test);
 
-test = test - 1; /*0*/
+test = test - 1; /*20*/
 
 console.log(test);
 
-test = true; /*true*/
-
-console.log(test);
+if (test === 20) {
+    console.log(true);
+} else {
+    console.log(false);
+}
 
 /*task 8*/
 let arr = [2, 3, 5, 8];
 let result = 1;
-let i = 0;
 
-for (; i < arr.length; i++) {
+for (let i = 0; i < arr.length; i++) {
     result *= arr[i];
 }
 
