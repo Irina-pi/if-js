@@ -21,11 +21,8 @@ test = test - 1; /*20*/
 
 console.log(test);
 
-if (test === 20) {
-    console.log(true);
-} else {
-    console.log(false);
-}
+const bool = Boolean(test);
+console.log(bool);
 
 /*task 8*/
 let arr = [2, 3, 5, 8];
