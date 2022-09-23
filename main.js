@@ -44,21 +44,21 @@ console.log(min2);
 
 //task 16.7
 let arr167 = [5, 20, 54, 26, 70, 60, 0, 56, 0, 1];
-let arr167str = arr167.join(', ');
-let x;
 let y;
 
-const zero = function () {
-    for (let i = 0; i < arr167.length; i++) {
-        x = arr167[i] % 10;
-        if (x === 0 && arr167[i] !== 0) {
-            y = arr167[i] / 10;
-            console.log([y + 'zero']);
-        } else if (arr167[i] === 0) {
-            console.log(['zero']);
+const zero = function (array) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] % 10 === 0 && array[i] !== 0) {
+            y = array[i] / 10;
+            array[i] = y + 'zero';
+        } else if (array[i] === 0) {
+            array[i] = 'zero';
         } else {
-            console.log([arr167[i]]);
+            array[i];
         }
     }
+    return array;
 };
-zero (arr167str);
+
+zero(arr167);
+console.log(arr167);
