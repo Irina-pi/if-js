@@ -21,14 +21,15 @@ test = test - 1; /*20*/
 
 console.log(test);
 
-const bool = Boolean(test);
-console.log(bool);
+test = Boolean(test);
+
+console.log(test);
 
 /*task 8*/
 let arr = [2, 3, 5, 8];
 let result = 1;
 
-for (i = 0; i < arr.length; i++) {
+for (let i = 0; i < arr.length; i++) {
     result *= arr[i];
 }
 
