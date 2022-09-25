@@ -1,6 +1,12 @@
 {
   "devDependencies": {
     "eslint": "^8.23.1",
+    "husky": "^8.0.1",
     "prettier": "2.7.1"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "prettier --write && eslint main.js",
+    "scriptname": "cmd"
   }
 }
