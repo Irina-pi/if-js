@@ -18,8 +18,8 @@ console.log(polyndrome(str));
 console.log(polyndrome(str2));
 
 //task 16.6
-let num5 = 5;
-let num10 = 10;
+let x = 5;
+let z = 10;
 const min = function (a, b) {
     if (a > b) {
         return b;
@@ -27,7 +27,7 @@ const min = function (a, b) {
     return a;
 };
 
-console.log(min(num5, num10));
+console.log(min(x, z));
 
 const max = function (a, y) {
     if (a < y) {
@@ -36,14 +36,14 @@ const max = function (a, y) {
     return a;
 };
 
-console.log(max(num5, num10));
+console.log(max(x, z));
 
-const min2 = (num5 > num10) ? num10 : num5;
+const min2 = (x > z) ? z : x;
 
 console.log(min2);
 
 //task 16.7
-let arr167 = [5, 20, 54, 26, 70, 60, 0, 56, 0, 1];
+let arr167 = [5, 20, 54, 26, 70, 60, 0, 56, 0, 100];
 let y;
 
 const zero = function (array) {
