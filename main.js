@@ -1,61 +1,46 @@
-//Lesson 16
-//task 16.5
-let str = 'шалаш';
-let str2 = 'Ирина';
-const polyndrome = function (poly) {
-  let res = false;
-  for (let i = 0; i <= poly.length; i++) {
-    if (poly[i] !== poly[poly.length - (i + 1)]) {
-      res = false;
-      break;
-    } else res = true;
-  }
-  return res;
-};
+/*task 6*/
+let user = 'John Doe';
+let student = 'Irina';
 
-console.log(polyndrome(str));
-console.log(polyndrome(str2));
+console.log(user);
+console.log(student);
 
-//task 16.6
-let x = 5;
-let z = 10;
-const min = function (a, b) {
-  if (a > b) {
-    return b;
-  }
-  return a;
-};
+user = student; /*Irina*/
 
-console.log(min(x, z));
+console.log(user);
 
-const max = function (a, y) {
-  if (a < y) {
-    return y;
-  }
-  return a;
-};
+/*task 7*/
+let test = 1;
 
-console.log(max(x, z));
+test++; /*2*/
+test = test + '1'; /*21*/
 
-const min2 = x > z ? z : x;
+console.log(test);
 
-console.log(min2);
+test = test - 1; /*20*/
 
-//task 16.7
-let arr167 = [5, 20, 54, 26, 70, 60, 0, 56, 0, 100];
+console.log(test);
 
-const zero = function (array) {
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] % 10 === 0 && array[i] !== 0 && array[i] !== 100) {
-      const m = array[i] / 10;
-      array[i] = m + 'zero';
-    } else if (array[i] % 100 === 0 && array[i] !== 0) {
-      const n = array[i] / 100;
-      array[i] = n + 'zero' + 'zero';
-    } else if (array[i] === 0) {
-      array[i] = 'zero';
-    } else {
-      array[i];
+test = Boolean(test);
+
+console.log(test);
+
+/*task 8*/
+let arr = [2, 3, 5, 8];
+let result = 1;
+
+for (let i = 0; i < arr.length; i++) {
+    result *= arr[i];
+}
+
+console.log(result);
+
+//task 9
+let arr9 = [2, 5, 8, 15, 0, 6, 20, 3];
+
+for (let i = 0; i < arr9.length; i++) {
+    if (arr9[i] > 5 && arr9[i] < 10) {
+        console.log(arr9[i]);
     }
   }
   return array;
