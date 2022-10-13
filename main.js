@@ -43,3 +43,46 @@ for (let i = 0; i < arr9.length; i++) {
         console.log(arr9[i]);
     }
 }
+
+//task 16.5
+function polyndrome (poly) {
+  for (let i = 0; i <= poly.length; i++) {
+    if (poly[i] !== poly[poly.length - (i + 1)]) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+}
+
+console.log(polyndrome('шалаш'));
+console.log(polyndrome('ирина'));
+
+
+//task 16.6
+//     console.log(max(num5, num10));
+//
+//     const minmax = (num5 > num10) ? num10 : num5;
+
+//task 16.7
+const arr167 = [5, 20, 54, 26, 70, 60, 0, 56, 0, 100];
+
+const zero = function (array) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 10 === 0 && array[i] !== 0) {
+      const y = array[i] / 10;
+      array[i] = y + 'zero';
+    } else if (array[i] % 100 === 0 && array[i] !== 0 ) {
+      const n = array[i] / 100;
+      array[i] = n + 'zero' + 'zero';
+    } else if (array[i] === 0) {
+      array[i] = 'zero';
+    } else {
+      array[i];
+    }
+  }
+  return array;
+};
+
+zero(arr167);
+console.log(arr167);
