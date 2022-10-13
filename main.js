@@ -42,13 +42,8 @@ for (let i = 0; i < arr9.length; i++) {
     if (arr9[i] > 5 && arr9[i] < 10) {
         console.log(arr9[i]);
     }
-}
+  }
+  return array;
+};
 
-//task 10
-let arr10 = [2, 5, 8, 15, 0, 6, 20, 3];
-
-for (let i = 0; i < arr10.length; i++) {
-    if (arr10[i] % 2 === 0) {
-        console.log(arr10[i]);
-    }
-}
+console.log(zero(arr167));
