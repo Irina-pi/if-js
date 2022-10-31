@@ -1,21 +1,11 @@
 {
-  "devDependencies": {
-    "eslint": "^8.23.1",
-    "husky": "^8.0.1",
-    "prettier": "2.7.1"
-  },
-  "scripts": {
-    "prepare": "husky install",
-    "lint": "prettier --write && eslint main.js",
-    "scriptname": "cmd"
-  },
   "name": "if-js",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
   "scripts": {
+    "scriptname": "cmd",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install",
     "lint": "prettier --write . && eslint main.js"
   },
   "repository": {
@@ -30,8 +20,7 @@
   },
   "homepage": "https://github.com/Irina-pi/if-js#readme",
   "devDependencies": {
-    "eslint": "8.22.0",
-    "husky": "^8.0.1",
+    "eslint": "^8.23.1",
     "prettier": "2.7.1"
   }
 }

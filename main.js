@@ -1,88 +1,187 @@
-/*task 6*/
-let user = 'John Doe';
-const student = 'Irina';
+//task 19.5
+const palindrome = (word) => word.charAt(0) === word.charAt(word.length - 1);
 
-console.log(user);
-console.log(student);
+console.log(palindrome('шалаш'));
+console.log(palindrome('ирина'));
 
-user = student; /*Irina*/
+//task 19.6
+const hotels = [
+  {
+    name: 'Hotel Leopold',
+    city: 'Saint Petersburg',
+    country: 'Russia',
+  },
+  {
+    name: 'Apartment Sunshine',
+    city: 'Santa Cruz de Tenerife',
+    country: 'Spain',
+  },
+  {
+    name: 'Villa Kunerad',
+    city: 'Vysokie Tatry',
+    country: 'Slowakia',
+  },
+  {
+    name: 'Hostel Friendship',
+    city: 'Berlin',
+    country: 'Germany',
+  },
+  {
+    name: 'Radisson Blu Hotel',
+    city: 'Kyiv',
+    country: 'Ukraine',
+  },
+  {
+    name: 'Paradise Hotel',
+    city: 'Guadalupe',
+    country: 'Mexico',
+  },
+  {
+    name: 'Hotel Grindewald',
+    city: 'Interlaken',
+    country: 'Switzerland',
+  },
+  {
+    name: 'The Andaman Resort',
+    city: 'Port Dickson',
+    country: 'Malaysia',
+  },
+  {
+    name: 'Virgin Hotel',
+    city: 'Chicago',
+    country: 'USA',
+  },
+  {
+    name: 'Grand Beach Resort',
+    city: 'Dubai',
+    country: 'United Arab Emirates',
+  },
+  {
+    name: 'Shilla Stay',
+    city: 'Seoul',
+    country: 'South Korea',
+  },
+  {
+    name: 'San Firenze Suites',
+    city: 'Florence',
+    country: 'Italy',
+  },
+  {
+    name: 'The Andaman Resort',
+    city: 'Port Dickson',
+    country: 'Malaysia',
+  },
+  {
+    name: 'Black Penny Villas',
+    city: 'BTDC, Nuca Dua',
+    country: 'Indonesia',
+  },
+  {
+    name: 'Koko Hotel',
+    city: 'Tokyo',
+    country: 'Japan',
+  },
+  {
+    name: 'Ramada Plaza',
+    city: 'Istanbul',
+    country: 'Turkey',
+  },
+  {
+    name: 'Waikiki Resort Hotel',
+    city: 'Hawaii',
+    country: 'USA',
+  },
+  {
+    name: 'Puro Hotel',
+    city: 'Krakow',
+    country: 'Poland',
+  },
+  {
+    name: 'Asma Suites',
+    city: 'Santorini',
+    country: 'Greece',
+  },
+  {
+    name: 'Cityden Apartments',
+    city: 'Amsterdam',
+    country: 'Netherlands',
+  },
+  {
+    name: 'Mandarin Oriental',
+    city: 'Miami',
+    country: 'USA',
+  },
+  {
+    name: 'Concept Terrace Hotel',
+    city: 'Rome',
+    country: 'Italy',
+  },
+  {
+    name: 'Ponta Mar Hotel',
+    city: 'Fortaleza',
+    country: 'Brazil',
+  },
+  {
+    name: 'Four Seasons Hotel',
+    city: 'Sydney',
+    country: 'Australia',
+  },
+  {
+    name: 'Le Meridien',
+    city: 'Nice',
+    country: 'France',
+  },
+  {
+    name: 'Apart Neptun',
+    city: 'Gdansk',
+    country: 'Poland',
+  },
+  {
+    name: 'Lux Isla',
+    city: 'Ibiza',
+    country: 'Spain',
+  },
+  {
+    name: 'Nox Hostel',
+    city: 'London',
+    country: 'UK',
+  },
+  {
+    name: 'Leonardo Vienna',
+    city: 'Vienna',
+    country: 'Austria',
+  },
+  {
+    name: 'Adagio Aparthotel',
+    city: 'Edinburgh',
+    country: 'UK',
+  },
+  {
+    name: 'Steigenberger Hotel',
+    city: 'Hamburg',
+    country: 'Germany',
+  },
+];
 
-console.log(user);
-
-/*task 7*/
-let test = 1;
-
-test++; /*2*/
-test = test + '1'; /*21*/
-
-console.log(test);
-
-test = test - 1; /*20*/
-
-console.log(test);
-
-test = Boolean(test);
-
-console.log(test);
-
-/*task 8*/
-const arr = [2, 3, 5, 8];
-let result = 1;
-
-for (let i = 0; i < arr.length; i++) {
-    result *= arr[i];
+function searchByWord(word) {
+  const filterHotels = hotels.filter((itemObject) => {
+    return (
+      itemObject.name === word ||
+      itemObject.city === word ||
+      itemObject.country === word
+    );
+  });
+  return Object.values(filterHotels);
 }
 
-console.log(result);
+console.log(searchByWord('Hamburg'));
+console.log(searchByWord('Germany'));
 
-//task 9
-const arr9 = [2, 5, 8, 15, 0, 6, 20, 3];
-
-for (let i = 0; i < arr9.length; i++) {
-    if (arr9[i] > 5 && arr9[i] < 10) {
-        console.log(arr9[i]);
-    }
+//task 19.7
+function searchCity(word) {
+  const indexFilter = hotels.findIndex((item) => item.country === word);
+  return `${word}: ${hotels[indexFilter].city}`;
 }
 
-//task 16.5
-function polyndrome (poly) {
-  for (let i = 0; i <= poly.length; i++) {
-    if (poly[i] !== poly[poly.length - (i + 1)]) {
-      return false;
-    } else {
-      return true;
-    }
-  }
-}
-
-console.log(polyndrome('шалаш'));
-console.log(polyndrome('ирина'));
-
-
-//task 16.6
-//     console.log(max(num5, num10));
-//
-//     const minmax = (num5 > num10) ? num10 : num5;
-
-//task 16.7
-const arr167 = [5, 20, 54, 26, 70, 60, 0, 56, 0, 100];
-
-const zero = function (array) {
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] % 10 === 0 && array[i] !== 0) {
-      const y = array[i] / 10;
-      array[i] = y + 'zero';
-    } else if (array[i] % 100 === 0 && array[i] !== 0 ) {
-      const n = array[i] / 100;
-      array[i] = n + 'zero' + 'zero';
-    } else if (array[i] === 0) {
-      array[i] = 'zero';
-    } else {
-      array[i];
-    }
-  }
-  return array;
-};
-
-zero(arr167);
-console.log(arr167);
+console.log(searchCity('Germany'));
+console.log(searchCity('Spain'));
