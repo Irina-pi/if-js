@@ -3,6 +3,8 @@ const palindrome = (word) => word.charAt(0) === word.charAt(word.length - 1);
 
 console.log(palindrome('шалаш'));
 console.log(palindrome('ирина'));
+console.log(palindrome('окошечко'));
+console.log(palindrome('cat'));
 
 //task 19.6
 const hotels = [
@@ -165,11 +167,9 @@ const hotels = [
 
 function searchByWord(word) {
   const filterHotels = hotels.filter((itemObject) => {
-    return (
-      itemObject.name === word ||
+    return itemObject.name === word ||
       itemObject.city === word ||
-      itemObject.country === word
-    );
+      itemObject.country === word;
   });
   return Object.values(filterHotels);
 }
