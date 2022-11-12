@@ -1,100 +1,66 @@
-/*task 6*/
-let user = 'John Doe';
-const student = 'Irina';
+const currentYear = 2022;
+const studentsData = [
+  {
+    firstName: 'Василий',
+    lastName: 'Петров',
+    admissionYear: 2019,
+    courseName: 'Java',
+  },
+  {
+    firstName: 'Иван',
+    lastName: 'Иванов',
+    admissionYear: 2018,
+    courseName: 'JavaScript',
+  },
+  {
+    firstName: 'Александр',
+    lastName: 'Федоров',
+    admissionYear: 2017,
+    courseName: 'Python',
+  },
+  {
+    firstName: 'Николай',
+    lastName: 'Петров',
+    admissionYear: 2019,
+    courseName: 'Android',
+  }
+];
 
-console.log(user);
-console.log(student);
-
-user = student; /*Irina*/
-
-console.log(user);
-
-/*task 7*/
-let test = 1;
-
-test++; /*2*/
-test = test + '1'; /*21*/
-
-console.log(test);
-
-test = test - 1; /*20*/
-
-console.log(test);
-
-test = Boolean(test);
-
-console.log(test);
-
-/*task 8*/
-const arr = [2, 3, 5, 8];
-let result = 1;
-
-for (let i = 0; i < arr.length; i++) {
-    result *= arr[i];
-}
-
-console.log(result);
-
-//task 9
-const arr9 = [2, 5, 8, 15, 0, 6, 20, 3];
-
-for (let i = 0; i < arr9.length; i++) {
-    if (arr9[i] > 5 && arr9[i] < 10) {
-        console.log(arr9[i]);
-    }
-}
-
-//task 10
-let arr10 = [2, 5, 8, 15, 0, 6, 20, 3];
-
-for (let i = 0; i < arr10.length; i++) {
-  if (arr10[i] % 2 === 0) {
-    console.log(arr10[i]);
+class User {
+  constructor({firstName, lastName}) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
   }
 }
 
-//task 16.5
-function polyndrome (poly) {
-  for (let i = 0; i <= poly.length; i++) {
-    if (poly[i] !== poly[poly.length - (i + 1)]) {
-      return false;
-    } else {
-      return true;
-    }
+class Student extends User {
+  constructor({firstName, lastName, admissionYear, courseName}) {
+    super({firstName, lastName});
+    this.admissionYear = admissionYear;
+    this.courseName = courseName;
+  }
+
+  get course() {
+    return currentYear - this.admissionYear;
   }
 }
 
-console.log(polyndrome('шалаш'));
-console.log(polyndrome('ирина'));
+const newStudent = studentsData.map((studentData) => new Student(studentData));
 
-
-// task 16.6
-// let num5 = 5;
-// let num10 = 10;
-//
-// console.log(max(num5, num10));
-//
-// const minmax = (num5 > num10) ? num10 : num5;
-
-//task 16.7
-const arr167 = [5, 20, 54, 26, 70, 60, 0, 56, 0, 100];
-
-const zero = function (array) {
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] % 10 === 0 && array[i] !== 0) {
-      const y = array[i] / 10;
-      array[i] = y + 'zero';
-    } else if (array[i] % 100 === 0 && array[i] !== 0 ) {
-      const n = array[i] / 100;
-      array[i] = n + 'zero' + 'zero';
-    } else if (array[i] === 0) {
-      array[i] = 'zero';
-    } else {
-      array[i];
-    }
+class Students {
+  constructor({newStudent = []}) {
+    this.students = newStudent;
   }
-  return array;
-};
 
-zero(arr167);
-console.log(arr167);
+  getInfo() {
+    this.students.sort((a, b) => a.course - b.course);
+    return this.students.map((student) => `${student.fullName} - ${student.courseName}, ${student.course}`);
+  }
+}
+
+const newStudents = new Students({newStudent});
+
+console.log(newStudents.getInfo());
