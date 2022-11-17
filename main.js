@@ -49,10 +49,19 @@ class Student extends User {
   }
 }
 
-const newStudent = studentsData.map((studentData) => new Student(studentData));
+// class Students {
+//   constructor({newStudent = []}) {
+//     this.students = newStudent;
+//   }
+//
+//   getInfo() {
+//     this.students.sort((a, b) => a.course - b.course);
+//     return this.students.map((student) => `${student.fullName} - ${student.courseName}, ${student.course}`);
+//   }
+// }
 
 class Students {
-  constructor({newStudent = []}) {
+  constructor(newStudent = []) {
     this.students = newStudent;
   }
 
@@ -62,6 +71,8 @@ class Students {
   }
 }
 
-const newStudents = new Students({newStudent});
+const newStudent = studentsData.map((studentData) => new Student(studentData));
+const students = new Students({newStudent});
+// const students = new Students(studentsData);
 
-console.log(newStudents.getInfo());
+console.log(students.getInfo());
