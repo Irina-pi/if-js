@@ -53,18 +53,27 @@ const data = [
   },
 ];
 
-function searchByWorld(world = '') {
+function searchByWorld(word = '') {
+  // const filterData = data.filter((itemObject) => {
+  //  return itemObject.hotel === word ||
+  //     itemObject.city === word ||
+  //     itemObject.country === word
+  // });
+  // return data[filterData].country + ', ' + data[filterData].city + ', ' + data[filterData].hotel;
+
   for (let i = 0; i < data.length; i++) {
     const result = data[i].country + ', ' + data[i].city + ', ' + data[i].hotel;
     if (
-      data[i].city === world ||
-      data[i].country === world ||
-      data[i].hotel === world
+      data[i].city === word ||
+      data[i].country === word ||
+      data[i].hotel === word
     ) {
       return result;
     }
   }
 }
+
+
 
 console.log(searchByWorld('Germany'));
 console.log(searchByWorld('King Kong Hostel'));
