@@ -1,5 +1,5 @@
 //task 19.5
-const palindrome = (word) => word.charAt(0) === word.charAt(word.length - 1);
+const palindrome = (word) => word.split('').reverse().join('') === word;
 
 console.log(palindrome('шалаш'));
 console.log(palindrome('ирина'));
@@ -165,12 +165,17 @@ const hotels = [
   },
 ];
 
-function searchByWord(word) {
+function searchByWord(word = '') {
   const filterHotels = hotels.filter((itemObject) => {
     return itemObject.name === word ||
       itemObject.city === word ||
       itemObject.country === word;
   });
+  // for (let i = 0; i < hotels.length; i++) {
+  //   const result = `${filterHotels[i].country}, ${filterHotels[i].city}, ${filterHotels[i].name}`;
+  // }
+  // return `${filterHotels.country}, ${filterHotels.city}, ${filterHotels.name}`
+  // return `${hotels[filterHotels].country}, ${hotels[filterHotels].city}, ${hotels[filterHotels].name}`;
   return Object.values(filterHotels);
 }
 
