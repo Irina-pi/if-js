@@ -24,11 +24,11 @@ const studentsData = [
     lastName: 'Петров',
     admissionYear: 2019,
     courseName: 'Android',
-  }
+  },
 ];
 
 class User {
-  constructor({firstName, lastName}) {
+  constructor({ firstName, lastName }) {
     this.firstName = firstName;
     this.lastName = lastName;
   }
@@ -38,8 +38,8 @@ class User {
 }
 
 class Student extends User {
-  constructor({firstName, lastName, admissionYear, courseName}) {
-    super({firstName, lastName});
+  constructor({ firstName, lastName, admissionYear, courseName }) {
+    super({ firstName, lastName });
     this.admissionYear = admissionYear;
     this.courseName = courseName;
   }
@@ -49,30 +49,32 @@ class Student extends User {
   }
 }
 
-// class Students {
-//   constructor({newStudent = []}) {
-//     this.students = newStudent;
-//   }
-//
-//   getInfo() {
-//     this.students.sort((a, b) => a.course - b.course);
-//     return this.students.map((student) => `${student.fullName} - ${student.courseName}, ${student.course}`);
-//   }
-// }
+const newStudent = studentsData.map((studentData) => new Student(studentData));
 
 class Students {
-  constructor(newStudent = []) {
+  constructor({ newStudent = [] }) {
     this.students = newStudent;
   }
 
   getInfo() {
     this.students.sort((a, b) => a.course - b.course);
-    return this.students.map((student) => `${student.fullName} - ${student.courseName}, ${student.course}`);
+    return this.students.map(
+      (student) =>
+        `${student.fullName} - ${student.courseName}, ${student.course}`,
+    );
   }
 }
 
-const newStudent = studentsData.map((studentData) => new Student(studentData));
-const students = new Students({newStudent});
-// const students = new Students(studentsData);
+const newStudents = new Students({ newStudent });
 
-console.log(students.getInfo());
+console.log(newStudents.getInfo());
+
+// for example:
+// const fullName = studentsData.map((studentsData) => new User(studentsData).fullName);
+// console.log(fullName);
+//
+// const course = studentsData.map((studentsData) => new Student(studentsData).course);
+// console.log(course);
+//
+// const courseSort = course.sort((a, b) => a - b);
+// console.log(courseSort);
