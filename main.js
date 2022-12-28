@@ -1,54 +1,68 @@
-/*task 6*/
-let user = 'John Doe';
-let student = 'Irina';
+//task 21.5
+const currentYear = 2022;
+const studentsData = [
+  {
+    firstName: 'Василий',
+    lastName: 'Петров',
+    admissionYear: 2019,
+    courseName: 'Java',
+  },
+  {
+    firstName: 'Иван',
+    lastName: 'Иванов',
+    admissionYear: 2018,
+    courseName: 'JavaScript',
+  },
+  {
+    firstName: 'Александр',
+    lastName: 'Федоров',
+    admissionYear: 2017,
+    courseName: 'Python',
+  },
+  {
+    firstName: 'Николай',
+    lastName: 'Петров',
+    admissionYear: 2019,
+    courseName: 'Android',
+  },
+];
 
-console.log(user);
-console.log(student);
-
-user = student; /*Irina*/
-
-console.log(user);
-
-/*task 7*/
-let test = 1;
-
-test++; /*2*/
-test = test + '1'; /*21*/
-
-console.log(test);
-
-test = test - 1; /*20*/
-
-console.log(test);
-
-test = Boolean(test);
-
-console.log(test);
-
-/*task 8*/
-let arr = [2, 3, 5, 8];
-let result = 1;
-
-for (let i = 0; i < arr.length; i++) {
-    result *= arr[i];
+class User {
+  constructor({ firstName, lastName }) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
 }
 
-console.log(result);
+class Student extends User {
+  constructor({ firstName, lastName, admissionYear, courseName }) {
+    super({ firstName, lastName });
+    this.admissionYear = admissionYear;
+    this.courseName = courseName;
+  }
 
-//task 9
-let arr9 = [2, 5, 8, 15, 0, 6, 20, 3];
-
-for (let i = 0; i < arr9.length; i++) {
-    if (arr9[i] > 5 && arr9[i] < 10) {
-        console.log(arr9[i]);
-    }
+  get course() {
+    return currentYear - this.admissionYear;
+  }
 }
 
-//task 10
-let arr10 = [2, 5, 8, 15, 0, 6, 20, 3];
+class Students {
+  constructor({ studentsData = [] }) {
+    this.students = studentsData.map((studentData) => new Student(studentData));
+  }
 
-for (let i = 0; i < arr10.length; i++) {
-    if (arr10[i] % 2 === 0) {
-        console.log(arr10[i]);
-    }
+  getInfo() {
+    this.students.sort((a, b) => a.course - b.course);
+    return this.students.map(
+      (student) =>
+        `${student.fullName} - ${student.courseName}, ${student.course}`,
+    );
+  }
 }
+
+const newStudents = new Students({ studentsData });
+
+console.log(newStudents.getInfo());
