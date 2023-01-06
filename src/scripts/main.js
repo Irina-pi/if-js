@@ -1,5 +1,5 @@
 //task 17.5
-function sum(a) {
+export function sum(a) {
   return function (b) {
     return a + b;
   };
