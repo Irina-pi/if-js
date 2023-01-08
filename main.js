@@ -54,26 +54,22 @@ const data = [
 ];
 
 function searchByWorld(word = '') {
-  // const filterData = data.filter((itemObject) => {
-  //  return itemObject.hotel === word ||
-  //     itemObject.city === word ||
-  //     itemObject.country === word
-  // });
-  // return data[filterData].country + ', ' + data[filterData].city + ', ' + data[filterData].hotel;
-
-  for (let i = 0; i < data.length; i++) {
-    const result = data[i].country + ', ' + data[i].city + ', ' + data[i].hotel;
-    if (
-      data[i].city === word ||
-      data[i].country === word ||
-      data[i].hotel === word
-    ) {
-      return result;
-    }
+  const filterData = data.filter((itemObject) => {
+    return itemObject.hotel === word ||
+      itemObject.city === word ||
+      itemObject.country === word
+  });
+  const lengthFilterData = filterData.length;
+  let i = 0;
+  while (i < lengthFilterData) {
+    console.log((`${filterData[i].country}, ${filterData[i].city}, ${filterData[i].hotel}`));
+    i++;
+  }
+  if (lengthFilterData === 0) {
+    console.log('Search didn`t got results');
   }
 }
 
-
-
-console.log(searchByWorld('Germany'));
-console.log(searchByWorld('King Kong Hostel'));
+searchByWorld('Berlin');
+searchByWorld('King Kong Hostel');
+searchByWorld('String');
