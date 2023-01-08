@@ -165,28 +165,38 @@ const hotels = [
   },
 ];
 
-function searchByWord(word = '') {
-  const filterHotels = hotels.filter((itemObject) => {
-    return itemObject.name === word ||
-      itemObject.city === word ||
-      itemObject.country === word;
-  });
-  // for (let i = 0; i < hotels.length; i++) {
-  //   const result = `${filterHotels[i].country}, ${filterHotels[i].city}, ${filterHotels[i].name}`;
-  // }
-  // return `${filterHotels.country}, ${filterHotels.city}, ${filterHotels.name}`
-  // return `${hotels[filterHotels].country}, ${hotels[filterHotels].city}, ${hotels[filterHotels].name}`;
-  return Object.values(filterHotels);
+function searchByWord (word = '') {
+  const hotelsFilter = hotels.filter((hotel) => {
+    return hotel.name === word || hotel.city === word || hotel.country === word
+  })
+  if (hotelsFilter.length === 0) {
+    console.log('Search didn`t get results');
+  }
+  let i = 0;
+  while (i < hotelsFilter.length) {
+    console.log(`${hotelsFilter[i].country}, ${hotelsFilter[i].city}, ${hotelsFilter[i].name}`);
+    i++;
+  }
 }
 
-console.log(searchByWord('Hamburg'));
-console.log(searchByWord('Germany'));
+searchByWord('Germany');
+searchByWord('Poland');
+searchByWord('City')
 
 //task 19.7
-function searchCity(word) {
-  const indexFilter = hotels.findIndex((item) => item.country === word);
-  return `${word}: ${hotels[indexFilter].city}`;
+
+function searchCity(country = '') {
+  const filterCountry = hotels.filter((hotel) => {
+    return hotel.country === country
+  });
+  if (filterCountry.length === 0) {
+    console.log('Search didn`t get results');
+  }
+  let i = 0;
+  while (i < filterCountry.length) {
+    console.log(`${filterCountry[i].country}: ${filterCountry[i].city}`);
+    i++;
+  }
 }
 
-console.log(searchCity('Germany'));
-console.log(searchCity('Spain'));
+searchCity('Germany');
