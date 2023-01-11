@@ -169,19 +169,20 @@ function searchByWord (word = '') {
   const hotelsFilter = hotels.filter((hotel) => {
     return hotel.name === word || hotel.city === word || hotel.country === word
   })
-  if (hotelsFilter.length === 0) {
-    console.log('Search didn`t get results');
-  }
   let i = 0;
+  let result = [];
   while (i < hotelsFilter.length) {
-    console.log(`${hotelsFilter[i].country}, ${hotelsFilter[i].city}, ${hotelsFilter[i].name}`);
+    result.push((`${hotelsFilter[i].country}, ${hotelsFilter[i].city}, ${hotelsFilter[i].name}`))
     i++;
   }
+  if (hotelsFilter.length === 0) {
+    return 'Search didn`t get results'
+  } return result.join('; ')
 }
 
-searchByWord('Germany');
-searchByWord('Poland');
-searchByWord('City')
+console.log(searchByWord('Germany'));
+console.log(searchByWord('Poland'));
+console.log(searchByWord('City'));
 
 //task 19.7
 
