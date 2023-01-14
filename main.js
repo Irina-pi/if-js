@@ -1,68 +1,75 @@
-//task 21.5
-const currentYear = 2022;
-const studentsData = [
+//task 18.5
+const newFormatData = function (dataFun) {
+  return dataFun.replace(
+    /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/g,
+    '$<day>.$<month>.$<year>',
+  );
+};
+
+const dataF = '2020-11-26';
+console.log(newFormatData(dataF));
+
+//task 18.6
+const data = [
   {
-    firstName: 'Василий',
-    lastName: 'Петров',
-    admissionYear: 2019,
-    courseName: 'Java',
+    country: 'Russia',
+    city: 'Saint Petersburg',
+    hotel: 'Hotel Leopold',
   },
   {
-    firstName: 'Иван',
-    lastName: 'Иванов',
-    admissionYear: 2018,
-    courseName: 'JavaScript',
+    country: 'Spain',
+    city: 'Santa Cruz de Tenerife',
+    hotel: 'Apartment Sunshine',
   },
   {
-    firstName: 'Александр',
-    lastName: 'Федоров',
-    admissionYear: 2017,
-    courseName: 'Python',
+    country: 'Slowakia',
+    city: 'Vysokie Tatry',
+    hotel: 'Villa Kunerad',
   },
   {
-    firstName: 'Николай',
-    lastName: 'Петров',
-    admissionYear: 2019,
-    courseName: 'Android',
+    country: 'Germany',
+    city: 'Berlin',
+    hotel: 'Hostel Friendship',
+  },
+  {
+    country: 'Indonesia',
+    city: 'Bali',
+    hotel: 'Ubud Bali Resort&SPA',
+  },
+  {
+    country: 'Netherlands',
+    city: 'Rotterdam',
+    hotel: 'King Kong Hostel',
+  },
+  {
+    country: 'Marocco',
+    city: 'Ourika',
+    hotel: 'Rokoko Hotel',
+  },
+  {
+    country: 'Germany',
+    city: 'Berlin',
+    hotel: 'Hotel Rehberge Berlin Mitte',
   },
 ];
 
-class User {
-  constructor({ firstName, lastName }) {
-    this.firstName = firstName;
-    this.lastName = lastName;
+function searchByWorld(word = '') {
+  const filterData = data.filter((itemObject) => {
+    return itemObject.hotel === word ||
+      itemObject.city === word ||
+      itemObject.country === word
+  });
+  let i = 0;
+  let result = [];
+  while (i < filterData.length) {
+    result.push((`${filterData[i].country}, ${filterData[i].city}, ${filterData[i].hotel}`));
+    i++;
   }
-  get fullName() {
-    return `${this.firstName} ${this.lastName}`;
-  }
+  if (filterData.length === 0) {
+    return 'Search didn`t got results';
+  } return result.join('; ');
 }
 
-class Student extends User {
-  constructor({ firstName, lastName, admissionYear, courseName }) {
-    super({ firstName, lastName });
-    this.admissionYear = admissionYear;
-    this.courseName = courseName;
-  }
-
-  get course() {
-    return currentYear - this.admissionYear;
-  }
-}
-
-class Students {
-  constructor({ studentsData = [] }) {
-    this.students = studentsData.map((studentData) => new Student(studentData));
-  }
-
-  getInfo() {
-    this.students.sort((a, b) => a.course - b.course);
-    return this.students.map(
-      (student) =>
-        `${student.fullName} - ${student.courseName}, ${student.course}`,
-    );
-  }
-}
-
-const newStudents = new Students({ studentsData });
-
-console.log(newStudents.getInfo());
+console.log(searchByWorld('Berlin'));
+console.log(searchByWorld('King Kong Hostel'));
+console.log(searchByWorld('String'));
