@@ -42,19 +42,16 @@ function deepEqual(object1, object2) {
     const key = keys1[i];
     const typeObjects =
       typeof object1[key] === 'object' && typeof object2[key] === 'object';
-
     if (
       (!typeObjects && object1[key] !== object2[key]) ||
-      (typeObjects &&
-        keys1.length !== keys2.length &&
-        object1[key] !== object2[key])
+      (typeObjects && !deepEqual(object1[key], object2[key]))
     ) {
       return false;
     }
   }
-
   return true;
 }
 
 console.log(deepEqual(obj1, obj2));
 console.log(deepEqual(obj1, obj3));
+console.log(deepEqual({ a: 'a', b: { a: 'a' } }, { a: 'a', b: { b: 'b' } }));
