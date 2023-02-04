@@ -182,9 +182,7 @@ console.log(searchByWord('Germany'));
 console.log(searchByWord('Poland'));
 console.log(searchByWord('City'));
 
-console.log('------------------------------------------');
 //task 19.7
-
 function uniqueCountry(array) {
   const arrayReduce = array.reduce((acc, { country, city }) => {
     acc[country]
