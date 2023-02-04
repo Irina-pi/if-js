@@ -1,9 +1,12 @@
 import { randNumber } from '@ngneat/falso';
-import { sum } from '../src/scripts/main';
 
-test('When adding new valid product, get successful confirmation', () => {
-  const a = randNumber;
-  const b = randNumber;
+import { sum } from '../src/scripts/main.js';
 
-  expect(sum(a)(b)).toBe(a + b);
+// eslint-disable-next-line no-undef
+test('Checking the sum of input numbers', () => {
+  const randA = randNumber;
+  const randB = randNumber;
+
+  // eslint-disable-next-line no-undef
+  expect(sum(randA)(randB)).toBe(randA + randB);
 });
