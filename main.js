@@ -9,6 +9,7 @@ const obj1 = {
     },
   },
 };
+
 const obj2 = {
   b: {
     c: {
@@ -19,6 +20,7 @@ const obj2 = {
   },
   a: 'a',
 };
+
 const obj3 = {
   a: {
     c: {
