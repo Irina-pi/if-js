@@ -1,13 +1,25 @@
 {
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.3",
+    "@ngneat/falso": "^6.1.0",
+    "babel-jest": "^29.1.2",
+    "eslint": "8.22.0",
+    "husky": "^8.0.1",
+    "jest": "^29.1.2",
+    "jest-environment-jsdom": "^29.4.1",
+    "prettier": "2.7.1"
+  },
+  "scripts": {
+    "test": "jest",
+    "prepare": "husky install",
+    "lint": "prettier --write . && eslint src/scripts/main.js",
+    "prepublish": "npm run lint && npm test"
+  },
   "name": "if-js",
   "version": "1.0.0",
   "description": "",
-  "main": "src/main.js",
-  "scripts": {
-    "scriptname": "cmd",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "prettier --write . && eslint src/main.js"
-  },
+  "main": "src/scripts/main.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Irina-pi/if-js.git"
@@ -19,8 +31,7 @@
     "url": "https://github.com/Irina-pi/if-js/issues"
   },
   "homepage": "https://github.com/Irina-pi/if-js#readme",
-  "devDependencies": {
-    "eslint": "^8.23.1",
-    "prettier": "2.7.1"
+  "dependencies": {
+    "save-dev": "^0.0.1-security"
   }
 }
