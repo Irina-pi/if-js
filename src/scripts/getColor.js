@@ -20,3 +20,16 @@ const text3 = document.getElementById('text3');
 text1.addEventListener('click', getColor(colors));
 text2.addEventListener('click', getColor(colors));
 text3.addEventListener('click', getColor(colors));
+
+// const colors = {
+//   data: ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'],
+//   [Symbol.iterator]() {
+//     // ваш код
+//   },
+// };
+
+//
+// Подсказка! Перебор colors должен должен быть бесконечным. Для вызова используйте next(). Т.е. ваш listener должен иметь примерно такой вид:
+//   const changeStyle = id => event => {
+//     event.target.style.color = colors.next(id).value;
+//   };
