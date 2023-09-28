@@ -16,25 +16,17 @@ const createSliderItem = function (id) {
 
   const location = divId.children[2];
   location.textContent = `${xId.city}, ${xId.country}`;
-}
+};
 
 createSliderItem('71ce9eac-e9b9-44f0-a342-9ff0b565f3b7');
 createSliderItem('aa560608-a879-48a7-80b6-deff2806b250');
 createSliderItem('1d88fefe-edf1-4cda-844a-babbf29bb2b3');
 createSliderItem('a2bf824d-edd8-41f0-8b70-244334086ab4');
 
-
-
-
-
-
 // const findHotel = data.find((item) => item.name === 'Villa Kunerad');
 // console.log(findHotel);  //{id: '1d88fefe-edf1-4cda-844a-babbf29bb2b3', name: 'Villa Kunerad', city: 'Vysokie Tatry', country: 'Slowakia', imageUrl: 'https://res.cloudinary.com/intellectfox/image/upload/v1610379365/fe/villa-kunerad_gdbqgv.jpg'}
 // const filterHotel = data.filter((item) => item.name === 'Villa Kunerad');
 // console.log(filterHotel);  //[{…}]
-
-
-
 
 // const funCardsHotel = function (hotel) {
 //   const findHotelFun = data.find((item) => item.name === hotel);
