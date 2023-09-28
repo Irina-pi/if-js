@@ -14,7 +14,7 @@ const countFun = function (plusId, minusId, numId, max, min) {
     const countMinus = num.innerHTML;
     if (+countMinus >= min + 1) {
       num.innerHTML--;
-    }g
+    }
   };
 };
 
