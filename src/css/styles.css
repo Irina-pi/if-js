@@ -540,6 +540,102 @@ input {
   }
 }
 
+/*for twoSearch*/
+.twoSearch-screen {
+  display: none;
+}
+
+.block-twoSearch__background {
+  background-color: var(--grey);
+}
+
+.block-twoSearch {
+  padding-top: 120px;
+  padding-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.block-twoSearch__header {
+  text-align: center;
+  padding-bottom: 80px;
+  font-weight: 500;
+  font-size: 40px;
+  color: var(--black);
+}
+
+.block-twoSearch__content {
+  display: flex;
+  column-gap: 30px;
+}
+
+.block-twoSearch__img {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 294px;
+  height: 296px;
+  object-fit: cover;
+}
+
+.block-twoSearch__caption {
+  font-weight: 400;
+  font-size: 24px;
+  color: var(--blue);
+  padding: 28px 0;
+}
+
+.block-twoSearch__location {
+  font-weight: 400;
+  font-size: 24px;
+  color: #bfbfbf;
+}
+
+.block-twoSearch__img--hotel {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.block-twoSearch__caption--hotel {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+.block-twoSearch__location--hotel {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+}
+
+
+@media only screen and (max-width: 700px) {
+  /* For mobile phones Block 2search: */
+  .twoSearch-screen {
+    grid-template: auto / repeat(2, 156px);
+    padding: 40px 0 40px 0;
+    column-gap: 16px;
+  }
+
+  .block-twoSearch__header {
+    grid-column: 1 / span 2;
+    padding-bottom: 32px;
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .block-twoSearch__img {
+    width: 156px;
+    height: 155px;
+  }
+
+  .block-twoSearch__caption {
+    font-size: 12px;
+    padding: 8px 0 4px;
+  }
+
+  .block-twoSearch__location {
+    font-size: 12px;
+  }
+}
+
 /*for Block 2 */
 .block-two {
   display: grid;
@@ -731,7 +827,8 @@ input {
 .block-three {
   /*display: grid;*/
   /*grid-template: auto / repeat(4, 25%);*/
-  padding: 120px 0;
+  padding-top: 120px;
+  padding-bottom: 200px;
   display: flex;
   flex-direction: column;
 }
@@ -741,7 +838,7 @@ input {
   /*grid-column: 1 / span 5;*/
   /*grid-row: 1 / 2;*/
   text-align: center;
-  padding-bottom: 110px;
+  padding-bottom: 80px;
   font-weight: 500;
   font-size: 40px;
   color: var(--black);

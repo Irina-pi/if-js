@@ -214,7 +214,7 @@
               <p>Discover stays</p>
               <p>to live, work or just relax</p>
             </div>
-            <form class="block-one__page--form">
+            <form id="form-js" class="block-one__page--form">
               <div class="block-one__page--form--filters">
                 <div
                   class="block-one__page--input--city-block block-one__desktop"
@@ -226,6 +226,7 @@
                   >
                   <input
                     id="block_one_input_city"
+                    name="block_one_input_city"
                     class="block-one__page--input--city-desktop block-one__desktop"
                     type="text"
                     placeholder="New York"
@@ -533,75 +534,89 @@
       </div>
     </section>
 
-    <section class="second-screen">
-      <div class="container">
-        <div class="block-two">
-          <div class="block-two__header">
-            <a class="block-two__header_a" href="#">What do we offer</a>
-          </div>
-          <div class="block-two__img block-two__img--support">
-            <svg
-              viewBox="0 0 100 100"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M79.167 58.333V75h-8.334V58.333h8.334Zm-50 0V75H25a4.179 4.179 0 0 1-4.167-4.167v-12.5h8.334ZM50 4.167c-20.708 0-37.5 16.791-37.5 37.5v29.166c0 6.917 5.583 12.5 12.5 12.5h12.5V50H20.833v-8.333C20.833 25.542 33.875 12.5 50 12.5s29.167 13.042 29.167 29.167V50H62.5v33.333h16.667V87.5H50v8.333h25c6.917 0 12.5-5.583 12.5-12.5V41.667c0-20.709-16.792-37.5-37.5-37.5Z"
-                fill="#3077C6"
-              />
-            </svg>
-          </div>
-          <div class="block-two__caption block-two__caption--support">
-            Support 24/7
-          </div>
-          <div class="block-two__img block-two__img--communicate">
-            <svg
-              viewBox="0 0 100 100"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M62.5 16.667v29.166H21.542l-4.875 4.875V16.667H62.5Zm4.167-8.334H12.5A4.179 4.179 0 0 0 8.333 12.5v58.333L25 54.167h41.667A4.179 4.179 0 0 0 70.833 50V12.5a4.179 4.179 0 0 0-4.166-4.167ZM87.5 25h-8.333v37.5H25v8.333A4.179 4.179 0 0 0 29.167 75H75l16.667 16.667v-62.5A4.179 4.179 0 0 0 87.5 25Z"
-                fill="#3077C6"
-              />
-            </svg>
-          </div>
-          <div class="block-two__caption block-two__caption--communicate">
-            Communicate directly
-          </div>
-          <div class="block-two__img block-two__img--book-online">
-            <svg
-              viewBox="0 0 100 100"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M16.667 25h75v-8.333h-75c-4.584 0-8.334 3.75-8.334 8.333v45.833H0v12.5h58.333v-12.5H16.667V25Zm79.166 8.333h-25a4.179 4.179 0 0 0-4.166 4.167v41.667a4.179 4.179 0 0 0 4.166 4.166h25A4.179 4.179 0 0 0 100 79.167V37.5a4.179 4.179 0 0 0-4.167-4.167Zm-4.166 37.5H75V41.667h16.667v29.166Z"
-                fill="#3077C6"
-              />
-            </svg>
-          </div>
-          <div class="block-two__caption block-two__caption--book-online">
-            Book online
-          </div>
-          <div class="block-two__img block-two__img--reviews">
-            <svg
-              viewBox="0 0 100 100"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M87.5 33.333H61.208l3.959-19.041.125-1.334a6.272 6.272 0 0 0-1.834-4.416l-4.416-4.375-27.417 27.458a8.147 8.147 0 0 0-2.458 5.875v41.667c0 4.583 3.75 8.333 8.333 8.333H75a8.277 8.277 0 0 0 7.667-5.083L95.25 53.042A8.232 8.232 0 0 0 95.833 50v-8.333c0-4.584-3.75-8.334-8.333-8.334ZM87.5 50 75 79.167H37.5V37.5l18.083-18.083-4.625 22.25H87.5V50ZM4.167 37.5h16.666v50H4.167v-50Z"
-                fill="#3077C6"
-              />
-            </svg>
-          </div>
-          <div class="block-two__caption block-two__caption--reviews">
-            Real guest reviews
+    <section class="twoSearch-screen" id="twoSearch-screen-js">
+      <div class="block-twoSearch__background">
+        <div class="container">
+          <div class="block-twoSearch">
+            <div class="block-twoSearch__header">Available hotels</div>
+            <div
+              id="mainDivAvailableHotels-js"
+              class="block-twoSearch__content"
+            ></div>
           </div>
         </div>
       </div>
     </section>
+
+<!--    <section class="second-screen">-->
+<!--      <div class="container">-->
+<!--        <div class="block-two">-->
+<!--          <div class="block-two__header">-->
+<!--            <a class="block-two__header_a" href="#">What do we offer</a>-->
+<!--          </div>-->
+<!--          <div class="block-two__img block-two__img&#45;&#45;support">-->
+<!--            <svg-->
+<!--              viewBox="0 0 100 100"-->
+<!--              fill="none"-->
+<!--              xmlns="http://www.w3.org/2000/svg"-->
+<!--            >-->
+<!--              <path-->
+<!--                d="M79.167 58.333V75h-8.334V58.333h8.334Zm-50 0V75H25a4.179 4.179 0 0 1-4.167-4.167v-12.5h8.334ZM50 4.167c-20.708 0-37.5 16.791-37.5 37.5v29.166c0 6.917 5.583 12.5 12.5 12.5h12.5V50H20.833v-8.333C20.833 25.542 33.875 12.5 50 12.5s29.167 13.042 29.167 29.167V50H62.5v33.333h16.667V87.5H50v8.333h25c6.917 0 12.5-5.583 12.5-12.5V41.667c0-20.709-16.792-37.5-37.5-37.5Z"-->
+<!--                fill="#3077C6"-->
+<!--              />-->
+<!--            </svg>-->
+<!--          </div>-->
+<!--          <div class="block-two__caption block-two__caption&#45;&#45;support">-->
+<!--            Support 24/7-->
+<!--          </div>-->
+<!--          <div class="block-two__img block-two__img&#45;&#45;communicate">-->
+<!--            <svg-->
+<!--              viewBox="0 0 100 100"-->
+<!--              fill="none"-->
+<!--              xmlns="http://www.w3.org/2000/svg"-->
+<!--            >-->
+<!--              <path-->
+<!--                d="M62.5 16.667v29.166H21.542l-4.875 4.875V16.667H62.5Zm4.167-8.334H12.5A4.179 4.179 0 0 0 8.333 12.5v58.333L25 54.167h41.667A4.179 4.179 0 0 0 70.833 50V12.5a4.179 4.179 0 0 0-4.166-4.167ZM87.5 25h-8.333v37.5H25v8.333A4.179 4.179 0 0 0 29.167 75H75l16.667 16.667v-62.5A4.179 4.179 0 0 0 87.5 25Z"-->
+<!--                fill="#3077C6"-->
+<!--              />-->
+<!--            </svg>-->
+<!--          </div>-->
+<!--          <div class="block-two__caption block-two__caption&#45;&#45;communicate">-->
+<!--            Communicate directly-->
+<!--          </div>-->
+<!--          <div class="block-two__img block-two__img&#45;&#45;book-online">-->
+<!--            <svg-->
+<!--              viewBox="0 0 100 100"-->
+<!--              fill="none"-->
+<!--              xmlns="http://www.w3.org/2000/svg"-->
+<!--            >-->
+<!--              <path-->
+<!--                d="M16.667 25h75v-8.333h-75c-4.584 0-8.334 3.75-8.334 8.333v45.833H0v12.5h58.333v-12.5H16.667V25Zm79.166 8.333h-25a4.179 4.179 0 0 0-4.166 4.167v41.667a4.179 4.179 0 0 0 4.166 4.166h25A4.179 4.179 0 0 0 100 79.167V37.5a4.179 4.179 0 0 0-4.167-4.167Zm-4.166 37.5H75V41.667h16.667v29.166Z"-->
+<!--                fill="#3077C6"-->
+<!--              />-->
+<!--            </svg>-->
+<!--          </div>-->
+<!--          <div class="block-two__caption block-two__caption&#45;&#45;book-online">-->
+<!--            Book online-->
+<!--          </div>-->
+<!--          <div class="block-two__img block-two__img&#45;&#45;reviews">-->
+<!--            <svg-->
+<!--              viewBox="0 0 100 100"-->
+<!--              fill="none"-->
+<!--              xmlns="http://www.w3.org/2000/svg"-->
+<!--            >-->
+<!--              <path-->
+<!--                d="M87.5 33.333H61.208l3.959-19.041.125-1.334a6.272 6.272 0 0 0-1.834-4.416l-4.416-4.375-27.417 27.458a8.147 8.147 0 0 0-2.458 5.875v41.667c0 4.583 3.75 8.333 8.333 8.333H75a8.277 8.277 0 0 0 7.667-5.083L95.25 53.042A8.232 8.232 0 0 0 95.833 50v-8.333c0-4.584-3.75-8.334-8.333-8.334ZM87.5 50 75 79.167H37.5V37.5l18.083-18.083-4.625 22.25H87.5V50ZM4.167 37.5h16.666v50H4.167v-50Z"-->
+<!--                fill="#3077C6"-->
+<!--              />-->
+<!--            </svg>-->
+<!--          </div>-->
+<!--          <div class="block-two__caption block-two__caption&#45;&#45;reviews">-->
+<!--            Real guest reviews-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
 
     <section class="third-screen">
       <div class="block-three__background">
@@ -848,497 +863,497 @@
       <!--      </div>-->
     </section>
 
-    <section class="four-screen">
-      <div class="block-four container">
-        <header class="block-four__header center-lg">
-          The best destinations
-        </header>
-        <section class="block-four__navigation row">
-          <p class="block-four__navigation--p">Regions</p>
-          <p class="block-four__navigation--p">Cities</p>
-          <p class="block-four__navigation--p">Places</p>
-        </section>
-        <section class="block-four__content row">
-          <figure class="block-four__content--figure">
-            <img
-              class="block-four__content--figure--img"
-              src="././images/Maldives.png"
-              alt="Maldives"
-            />
-            <div class="block-four__content--figure--bg-img desktop"></div>
-            <button class="block-four__content--figure--button desktop">
-              Book now
-            </button>
-            <figcaption class="block-four__content--figure--figcaption">
-              Maldives
-            </figcaption>
-          </figure>
-          <figure class="block-four__content--figure">
-            <div class="block-four__content--figure-block">
-              <img
-                class="block-four__content--figure--img"
-                src="././images/Spain.png"
-                alt="Spain"
-              />
-              <div class="block-four__content--figure--bg-img desktop"></div>
-              <button class="block-four__content--figure--button desktop">
-                Book now
-              </button>
-              <div class="block-four--circle phone">
-                <svg
-                  class="block-four__content--arrow phone"
-                  width="9"
-                  height="21"
-                  viewBox="0 0 9 21"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M.941 19.823 7.1 11.612a2 2 0 0 0 0-2.4L.941 1"
-                    stroke="#383838"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
-            </div>
-            <figcaption class="block-four__content--figure--figcaption">
-              Spain
-            </figcaption>
-          </figure>
-          <figure class="block-four__content--figure desktop">
-            <img
-              class="block-four__content--figure--img desktop"
-              src="././images/Norway.png"
-              alt="Norway"
-            />
-            <div class="block-four__content--figure--bg-img desktop"></div>
-            <button class="block-four__content--figure--button desktop">
-              Book now
-            </button>
-            <figcaption class="block-four__content--figure--figcaption desktop">
-              Norway
-            </figcaption>
-          </figure>
-          <figure class="block-four__content--figure desktop">
-            <img
-              class="block-four__content--figure--img desktop"
-              src="././images/island.png"
-              alt="Island"
-            />
-            <div class="block-four__content--figure--bg-img desktop"></div>
-            <button class="block-four__content--figure--button desktop">
-              Book now
-            </button>
-            <figcaption class="block-four__content--figure--figcaption desktop">
-              Island
-            </figcaption>
-          </figure>
-        </section>
-        <section class="block-four--circle desktop">
-          <svg
-            class="block-four__content--arrow desktop"
-            width="21"
-            height="9"
-            viewBox="0 0 21 9"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="m1.176 1 8.212 6.159a2 2 0 0 0 2.4 0L20 1"
-              stroke="#383838"
-              stroke-width="2"
-            />
-          </svg>
-        </section>
-      </div>
-    </section>
+<!--    <section class="four-screen">-->
+<!--      <div class="block-four container">-->
+<!--        <header class="block-four__header center-lg">-->
+<!--          The best destinations-->
+<!--        </header>-->
+<!--        <section class="block-four__navigation row">-->
+<!--          <p class="block-four__navigation&#45;&#45;p">Regions</p>-->
+<!--          <p class="block-four__navigation&#45;&#45;p">Cities</p>-->
+<!--          <p class="block-four__navigation&#45;&#45;p">Places</p>-->
+<!--        </section>-->
+<!--        <section class="block-four__content row">-->
+<!--          <figure class="block-four__content&#45;&#45;figure">-->
+<!--            <img-->
+<!--              class="block-four__content&#45;&#45;figure&#45;&#45;img"-->
+<!--              src="././images/Maldives.png"-->
+<!--              alt="Maldives"-->
+<!--            />-->
+<!--            <div class="block-four__content&#45;&#45;figure&#45;&#45;bg-img desktop"></div>-->
+<!--            <button class="block-four__content&#45;&#45;figure&#45;&#45;button desktop">-->
+<!--              Book now-->
+<!--            </button>-->
+<!--            <figcaption class="block-four__content&#45;&#45;figure&#45;&#45;figcaption">-->
+<!--              Maldives-->
+<!--            </figcaption>-->
+<!--          </figure>-->
+<!--          <figure class="block-four__content&#45;&#45;figure">-->
+<!--            <div class="block-four__content&#45;&#45;figure-block">-->
+<!--              <img-->
+<!--                class="block-four__content&#45;&#45;figure&#45;&#45;img"-->
+<!--                src="././images/Spain.png"-->
+<!--                alt="Spain"-->
+<!--              />-->
+<!--              <div class="block-four__content&#45;&#45;figure&#45;&#45;bg-img desktop"></div>-->
+<!--              <button class="block-four__content&#45;&#45;figure&#45;&#45;button desktop">-->
+<!--                Book now-->
+<!--              </button>-->
+<!--              <div class="block-four&#45;&#45;circle phone">-->
+<!--                <svg-->
+<!--                  class="block-four__content&#45;&#45;arrow phone"-->
+<!--                  width="9"-->
+<!--                  height="21"-->
+<!--                  viewBox="0 0 9 21"-->
+<!--                  fill="none"-->
+<!--                  xmlns="http://www.w3.org/2000/svg"-->
+<!--                >-->
+<!--                  <path-->
+<!--                    d="M.941 19.823 7.1 11.612a2 2 0 0 0 0-2.4L.941 1"-->
+<!--                    stroke="#383838"-->
+<!--                    stroke-width="2"-->
+<!--                  />-->
+<!--                </svg>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <figcaption class="block-four__content&#45;&#45;figure&#45;&#45;figcaption">-->
+<!--              Spain-->
+<!--            </figcaption>-->
+<!--          </figure>-->
+<!--          <figure class="block-four__content&#45;&#45;figure desktop">-->
+<!--            <img-->
+<!--              class="block-four__content&#45;&#45;figure&#45;&#45;img desktop"-->
+<!--              src="././images/Norway.png"-->
+<!--              alt="Norway"-->
+<!--            />-->
+<!--            <div class="block-four__content&#45;&#45;figure&#45;&#45;bg-img desktop"></div>-->
+<!--            <button class="block-four__content&#45;&#45;figure&#45;&#45;button desktop">-->
+<!--              Book now-->
+<!--            </button>-->
+<!--            <figcaption class="block-four__content&#45;&#45;figure&#45;&#45;figcaption desktop">-->
+<!--              Norway-->
+<!--            </figcaption>-->
+<!--          </figure>-->
+<!--          <figure class="block-four__content&#45;&#45;figure desktop">-->
+<!--            <img-->
+<!--              class="block-four__content&#45;&#45;figure&#45;&#45;img desktop"-->
+<!--              src="././images/island.png"-->
+<!--              alt="Island"-->
+<!--            />-->
+<!--            <div class="block-four__content&#45;&#45;figure&#45;&#45;bg-img desktop"></div>-->
+<!--            <button class="block-four__content&#45;&#45;figure&#45;&#45;button desktop">-->
+<!--              Book now-->
+<!--            </button>-->
+<!--            <figcaption class="block-four__content&#45;&#45;figure&#45;&#45;figcaption desktop">-->
+<!--              Island-->
+<!--            </figcaption>-->
+<!--          </figure>-->
+<!--        </section>-->
+<!--        <section class="block-four&#45;&#45;circle desktop">-->
+<!--          <svg-->
+<!--            class="block-four__content&#45;&#45;arrow desktop"-->
+<!--            width="21"-->
+<!--            height="9"-->
+<!--            viewBox="0 0 21 9"-->
+<!--            fill="none"-->
+<!--            xmlns="http://www.w3.org/2000/svg"-->
+<!--          >-->
+<!--            <path-->
+<!--              d="m1.176 1 8.212 6.159a2 2 0 0 0 2.4 0L20 1"-->
+<!--              stroke="#383838"-->
+<!--              stroke-width="2"-->
+<!--            />-->
+<!--          </svg>-->
+<!--        </section>-->
+<!--      </div>-->
+<!--    </section>-->
 
-    <section class="block-signup">
-      <div class="container">
-        <section class="block-four__signup row">
-          <div class="block-four__signup--main-block row">
-            <div class="block-four__signup--install phone">Install</div>
-            <div class="block-four__signup--logo desktop">
-              <svg
-                class="desktop"
-                width="86"
-                height="86"
-                viewBox="0 0 86 86"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx="43" cy="43" r="43" fill="#fff" />
-                <path
-                  d="M46.652 55.748c0-2.056.511-4.03 1.473-5.79a54.137 54.137 0 0 0-2.782-1.472.362.362 0 0 1-.205-.338v-8.08a3.776 3.776 0 0 0 1.688-3.141v-8.378A7.55 7.55 0 0 0 39.276 21h-1.8a7.55 7.55 0 0 0-7.549 7.55v8.377c0 1.31.675 2.465 1.688 3.14v8.081a.38.38 0 0 1-.205.338c-1.155.562-6.75 3.386-11.937 7.651A4.04 4.04 0 0 0 18 59.277v5.739h32.979a10.52 10.52 0 0 1-.788-.726 12.01 12.01 0 0 1-3.54-8.542Z"
-                  fill="#3077C6"
-                />
-                <path
-                  d="M58.732 46.48c-5.114 0-9.267 4.154-9.267 9.268 0 5.115 4.153 9.268 9.267 9.268 5.115 0 9.268-4.153 9.268-9.268a9.266 9.266 0 0 0-9.268-9.267ZM64.154 57.1h-4.071v4.07h-2.7V57.1H53.31v-2.701h4.071v-4.071h2.7v4.071h4.072v2.7Z"
-                  fill="#3077C6"
-                />
-              </svg>
-            </div>
-            <div class="block-four__signup--content">
-              <header class="block-four__signup--header">
-                Sign up and get 20% off your first booking
-              </header>
-              <button class="block-four__signup--button desktop">
-                Sign up
-              </button>
-            </div>
-            <div class="block-four__signup--logo phone">
-              <svg
-                class="phone"
-                width="58"
-                height="58"
-                viewBox="0 0 58 58"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="58" height="58" rx="4" fill="#3077C6" />
-                <path
-                  d="M2.586 26.61a1.586 1.586 0 0 1-.15-.36 1.644 1.644 0 0 1-.069-.48c0-.311.065-.535.196-.67a.723.723 0 0 1 .529-.204h5.014c.053.088.103.207.15.36.045.151.068.31.068.479 0 .311-.069.535-.207.67a.684.684 0 0 1-.517.204H6.323v5.537a3.063 3.063 0 0 1-.402.072 3.918 3.918 0 0 1-.53.035c-.176 0-.333-.016-.47-.047a.753.753 0 0 1-.334-.144.647.647 0 0 1-.207-.3 1.518 1.518 0 0 1-.07-.503v-4.65H2.587ZM10.643 32.182a2.57 2.57 0 0 1-.368.072 3.43 3.43 0 0 1-.506.035c-.169 0-.322-.011-.46-.035a.753.753 0 0 1-.334-.144.741.741 0 0 1-.218-.288 1.473 1.473 0 0 1-.07-.491v-3.595c0-.184.032-.34.093-.468.069-.135.165-.255.287-.359.123-.104.273-.196.449-.276a4.304 4.304 0 0 1 1.23-.371c.223-.04.445-.06.667-.06.368 0 .66.076.874.228.215.143.322.383.322.719 0 .111-.015.223-.046.335-.03.104-.069.2-.115.288a5.27 5.27 0 0 0-1.449.204 1.721 1.721 0 0 0-.356.12v4.086ZM13.37 24.752c0-.304.096-.56.287-.767.2-.208.46-.311.782-.311s.58.103.77.311c.2.208.3.463.3.767s-.1.56-.3.767c-.19.208-.448.312-.77.312s-.582-.104-.782-.312a1.088 1.088 0 0 1-.287-.767Zm2.047 7.43c-.085.016-.211.035-.38.06a2.696 2.696 0 0 1-.954.012.754.754 0 0 1-.334-.144.742.742 0 0 1-.218-.288 1.473 1.473 0 0 1-.07-.491v-4.877c.085-.016.208-.036.369-.06a2.717 2.717 0 0 1 .954-.012.762.762 0 0 1 .345.143.647.647 0 0 1 .207.3c.054.12.08.28.08.48v4.877ZM19.226 26.19c.46 0 .885.064 1.276.192.399.12.74.307 1.024.563.283.256.506.58.667.97.16.384.241.843.241 1.379 0 .51-.069.958-.207 1.342a2.7 2.7 0 0 1-.586.97c-.253.256-.56.448-.92.576a3.458 3.458 0 0 1-1.185.191c-.33 0-.636-.052-.92-.155v1.989c-.076.024-.199.048-.368.072a2.78 2.78 0 0 1-.517.048c-.169 0-.322-.012-.46-.036a.752.752 0 0 1-.334-.144.647.647 0 0 1-.207-.3 1.368 1.368 0 0 1-.069-.48v-5.751c0-.216.042-.392.127-.527.092-.136.215-.26.368-.372.238-.16.533-.287.885-.383a4.515 4.515 0 0 1 1.185-.144Zm.023 4.578c.79 0 1.184-.492 1.184-1.474 0-.512-.1-.891-.299-1.139-.191-.247-.471-.371-.84-.371-.145 0-.275.02-.39.06a1.318 1.318 0 0 0-.3.12V30.6c.093.048.193.088.3.12.107.032.222.048.345.048ZM29.77 32.146a3.062 3.062 0 0 1-.402.072 3.917 3.917 0 0 1-.529.035c-.176 0-.333-.016-.471-.047a.753.753 0 0 1-.334-.144.647.647 0 0 1-.207-.3 1.518 1.518 0 0 1-.069-.503v-1.87H25.55v2.757a3.062 3.062 0 0 1-.402.072 3.917 3.917 0 0 1-.53.035c-.176 0-.333-.016-.47-.047a.754.754 0 0 1-.334-.144.647.647 0 0 1-.207-.3 1.52 1.52 0 0 1-.07-.503v-6.327c.085-.016.22-.036.403-.06a3.1 3.1 0 0 1 .53-.048c.176 0 .329.016.46.048a.762.762 0 0 1 .344.144.647.647 0 0 1 .207.3c.046.127.07.295.07.503v1.917h2.207v-2.804a7.86 7.86 0 0 1 .403-.06c.184-.032.36-.048.529-.048.176 0 .33.016.46.048a.762.762 0 0 1 .345.144.647.647 0 0 1 .207.3c.046.127.069.295.069.503v6.327ZM36.899 29.282c0 .495-.073.938-.218 1.33a2.665 2.665 0 0 1-.621.97c-.261.264-.575.464-.943.6a3.533 3.533 0 0 1-1.23.203c-.453 0-.863-.072-1.231-.215a2.798 2.798 0 0 1-.955-.612c-.26-.271-.464-.599-.61-.982a3.62 3.62 0 0 1-.218-1.294c0-.472.073-.9.219-1.282.145-.384.349-.708.61-.971.267-.272.586-.48.954-.623a3.356 3.356 0 0 1 1.23-.216c.452 0 .863.076 1.23.228a2.6 2.6 0 0 1 .944.623c.268.263.475.587.62.97.146.384.219.807.219 1.27Zm-4.025 0c0 .487.088.862.265 1.126a.884.884 0 0 0 .759.383.82.82 0 0 0 .736-.395c.176-.264.264-.635.264-1.114 0-.48-.088-.847-.264-1.103a.848.848 0 0 0-.748-.395.848.848 0 0 0-.747.395c-.177.256-.265.623-.265 1.103ZM37.853 26.454c.076-.024.195-.048.356-.072.169-.024.341-.036.518-.036.168 0 .318.012.448.036a.762.762 0 0 1 .345.143.647.647 0 0 1 .207.3c.054.12.08.28.08.48v2.576c0 .327.077.563.23.707.154.136.376.203.668.203a1.534 1.534 0 0 0 .69-.143v-4.194c.076-.024.195-.048.356-.072.169-.024.341-.036.518-.036.168 0 .318.012.448.036a.762.762 0 0 1 .345.143.647.647 0 0 1 .207.3c.054.12.08.28.08.48v3.642c0 .4-.16.7-.482.9-.269.175-.59.307-.966.395-.368.095-.77.143-1.208.143-.414 0-.797-.048-1.15-.143a2.517 2.517 0 0 1-.897-.444 1.98 1.98 0 0 1-.586-.767c-.138-.32-.207-.703-.207-1.15v-3.427ZM49.26 30.456c0 .607-.218 1.082-.655 1.426-.437.343-1.08.515-1.931.515-.322 0-.621-.024-.898-.072a2.717 2.717 0 0 1-.713-.215 1.407 1.407 0 0 1-.46-.384.91.91 0 0 1-.16-.539c0-.192.038-.352.114-.48.077-.135.17-.247.276-.335.223.128.476.244.76.348.29.096.624.143 1 .143.238 0 .418-.035.54-.107.13-.072.196-.168.196-.288 0-.112-.046-.2-.138-.264-.092-.064-.245-.116-.46-.155l-.345-.072c-.667-.136-1.165-.348-1.495-.635-.322-.296-.483-.715-.483-1.259 0-.295.061-.563.184-.802.123-.24.295-.44.517-.6.223-.16.487-.283.794-.371.314-.088.66-.132 1.035-.132.284 0 .548.024.793.072.253.04.472.104.656.192.184.087.33.203.437.347.107.136.16.3.16.491a1.046 1.046 0 0 1-.344.803 1.22 1.22 0 0 0-.276-.12 2.685 2.685 0 0 0-.402-.12 4.071 4.071 0 0 0-.449-.095 2.49 2.49 0 0 0-.402-.036c-.253 0-.449.032-.587.096-.138.056-.207.148-.207.275 0 .088.038.16.115.216.077.056.222.108.437.156l.356.084c.736.175 1.258.42 1.564.73.315.304.472.7.472 1.187ZM53.218 32.385c-.453 0-.874-.064-1.265-.191a2.969 2.969 0 0 1-1.012-.6 2.847 2.847 0 0 1-.679-.994c-.16-.4-.241-.867-.241-1.402 0-.527.08-.979.241-1.354.169-.384.387-.695.656-.935a2.46 2.46 0 0 1 .92-.54c.345-.12.697-.179 1.058-.179.406 0 .774.064 1.104.192.337.127.624.303.862.527.245.224.433.491.564.803.138.311.207.65.207 1.018 0 .272-.073.48-.219.624-.146.143-.349.235-.61.275l-2.84.444c.084.263.257.463.518.599.26.127.56.191.897.191.314 0 .61-.04.885-.12a2.9 2.9 0 0 0 .69-.299c.123.08.226.192.31.336a.886.886 0 0 1 .127.455c0 .36-.16.627-.483.803a2.487 2.487 0 0 1-.828.275 5.604 5.604 0 0 1-.862.072Zm-.322-4.71c-.184 0-.345.033-.483.097a.941.941 0 0 0-.322.251 1.03 1.03 0 0 0-.196.336c-.038.12-.061.244-.069.371l1.967-.335c-.023-.16-.108-.32-.253-.48-.146-.16-.36-.24-.644-.24Z"
-                  fill="#fff"
-                />
-              </svg>
-            </div>
-          </div>
-          <div class="block-four__signup--close-block">
-            <div class="block-four__signup--close">
-              <svg
-                class="svg-close"
-                viewBox="0 0 26 26"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M26 1.486 24.514 0 13 11.514 1.486 0 0 1.486 11.514 13 0 24.514 1.486 26 13 14.486 24.514 26 26 24.514 14.486 13 26 1.486Z"
-                  fill="#BFBFBF"
-                />
-              </svg>
-            </div>
-          </div>
-        </section>
-      </div>
-    </section>
+<!--    <section class="block-signup">-->
+<!--      <div class="container">-->
+<!--        <section class="block-four__signup row">-->
+<!--          <div class="block-four__signup&#45;&#45;main-block row">-->
+<!--            <div class="block-four__signup&#45;&#45;install phone">Install</div>-->
+<!--            <div class="block-four__signup&#45;&#45;logo desktop">-->
+<!--              <svg-->
+<!--                class="desktop"-->
+<!--                width="86"-->
+<!--                height="86"-->
+<!--                viewBox="0 0 86 86"-->
+<!--                fill="none"-->
+<!--                xmlns="http://www.w3.org/2000/svg"-->
+<!--              >-->
+<!--                <circle cx="43" cy="43" r="43" fill="#fff" />-->
+<!--                <path-->
+<!--                  d="M46.652 55.748c0-2.056.511-4.03 1.473-5.79a54.137 54.137 0 0 0-2.782-1.472.362.362 0 0 1-.205-.338v-8.08a3.776 3.776 0 0 0 1.688-3.141v-8.378A7.55 7.55 0 0 0 39.276 21h-1.8a7.55 7.55 0 0 0-7.549 7.55v8.377c0 1.31.675 2.465 1.688 3.14v8.081a.38.38 0 0 1-.205.338c-1.155.562-6.75 3.386-11.937 7.651A4.04 4.04 0 0 0 18 59.277v5.739h32.979a10.52 10.52 0 0 1-.788-.726 12.01 12.01 0 0 1-3.54-8.542Z"-->
+<!--                  fill="#3077C6"-->
+<!--                />-->
+<!--                <path-->
+<!--                  d="M58.732 46.48c-5.114 0-9.267 4.154-9.267 9.268 0 5.115 4.153 9.268 9.267 9.268 5.115 0 9.268-4.153 9.268-9.268a9.266 9.266 0 0 0-9.268-9.267ZM64.154 57.1h-4.071v4.07h-2.7V57.1H53.31v-2.701h4.071v-4.071h2.7v4.071h4.072v2.7Z"-->
+<!--                  fill="#3077C6"-->
+<!--                />-->
+<!--              </svg>-->
+<!--            </div>-->
+<!--            <div class="block-four__signup&#45;&#45;content">-->
+<!--              <header class="block-four__signup&#45;&#45;header">-->
+<!--                Sign up and get 20% off your first booking-->
+<!--              </header>-->
+<!--              <button class="block-four__signup&#45;&#45;button desktop">-->
+<!--                Sign up-->
+<!--              </button>-->
+<!--            </div>-->
+<!--            <div class="block-four__signup&#45;&#45;logo phone">-->
+<!--              <svg-->
+<!--                class="phone"-->
+<!--                width="58"-->
+<!--                height="58"-->
+<!--                viewBox="0 0 58 58"-->
+<!--                fill="none"-->
+<!--                xmlns="http://www.w3.org/2000/svg"-->
+<!--              >-->
+<!--                <rect width="58" height="58" rx="4" fill="#3077C6" />-->
+<!--                <path-->
+<!--                  d="M2.586 26.61a1.586 1.586 0 0 1-.15-.36 1.644 1.644 0 0 1-.069-.48c0-.311.065-.535.196-.67a.723.723 0 0 1 .529-.204h5.014c.053.088.103.207.15.36.045.151.068.31.068.479 0 .311-.069.535-.207.67a.684.684 0 0 1-.517.204H6.323v5.537a3.063 3.063 0 0 1-.402.072 3.918 3.918 0 0 1-.53.035c-.176 0-.333-.016-.47-.047a.753.753 0 0 1-.334-.144.647.647 0 0 1-.207-.3 1.518 1.518 0 0 1-.07-.503v-4.65H2.587ZM10.643 32.182a2.57 2.57 0 0 1-.368.072 3.43 3.43 0 0 1-.506.035c-.169 0-.322-.011-.46-.035a.753.753 0 0 1-.334-.144.741.741 0 0 1-.218-.288 1.473 1.473 0 0 1-.07-.491v-3.595c0-.184.032-.34.093-.468.069-.135.165-.255.287-.359.123-.104.273-.196.449-.276a4.304 4.304 0 0 1 1.23-.371c.223-.04.445-.06.667-.06.368 0 .66.076.874.228.215.143.322.383.322.719 0 .111-.015.223-.046.335-.03.104-.069.2-.115.288a5.27 5.27 0 0 0-1.449.204 1.721 1.721 0 0 0-.356.12v4.086ZM13.37 24.752c0-.304.096-.56.287-.767.2-.208.46-.311.782-.311s.58.103.77.311c.2.208.3.463.3.767s-.1.56-.3.767c-.19.208-.448.312-.77.312s-.582-.104-.782-.312a1.088 1.088 0 0 1-.287-.767Zm2.047 7.43c-.085.016-.211.035-.38.06a2.696 2.696 0 0 1-.954.012.754.754 0 0 1-.334-.144.742.742 0 0 1-.218-.288 1.473 1.473 0 0 1-.07-.491v-4.877c.085-.016.208-.036.369-.06a2.717 2.717 0 0 1 .954-.012.762.762 0 0 1 .345.143.647.647 0 0 1 .207.3c.054.12.08.28.08.48v4.877ZM19.226 26.19c.46 0 .885.064 1.276.192.399.12.74.307 1.024.563.283.256.506.58.667.97.16.384.241.843.241 1.379 0 .51-.069.958-.207 1.342a2.7 2.7 0 0 1-.586.97c-.253.256-.56.448-.92.576a3.458 3.458 0 0 1-1.185.191c-.33 0-.636-.052-.92-.155v1.989c-.076.024-.199.048-.368.072a2.78 2.78 0 0 1-.517.048c-.169 0-.322-.012-.46-.036a.752.752 0 0 1-.334-.144.647.647 0 0 1-.207-.3 1.368 1.368 0 0 1-.069-.48v-5.751c0-.216.042-.392.127-.527.092-.136.215-.26.368-.372.238-.16.533-.287.885-.383a4.515 4.515 0 0 1 1.185-.144Zm.023 4.578c.79 0 1.184-.492 1.184-1.474 0-.512-.1-.891-.299-1.139-.191-.247-.471-.371-.84-.371-.145 0-.275.02-.39.06a1.318 1.318 0 0 0-.3.12V30.6c.093.048.193.088.3.12.107.032.222.048.345.048ZM29.77 32.146a3.062 3.062 0 0 1-.402.072 3.917 3.917 0 0 1-.529.035c-.176 0-.333-.016-.471-.047a.753.753 0 0 1-.334-.144.647.647 0 0 1-.207-.3 1.518 1.518 0 0 1-.069-.503v-1.87H25.55v2.757a3.062 3.062 0 0 1-.402.072 3.917 3.917 0 0 1-.53.035c-.176 0-.333-.016-.47-.047a.754.754 0 0 1-.334-.144.647.647 0 0 1-.207-.3 1.52 1.52 0 0 1-.07-.503v-6.327c.085-.016.22-.036.403-.06a3.1 3.1 0 0 1 .53-.048c.176 0 .329.016.46.048a.762.762 0 0 1 .344.144.647.647 0 0 1 .207.3c.046.127.07.295.07.503v1.917h2.207v-2.804a7.86 7.86 0 0 1 .403-.06c.184-.032.36-.048.529-.048.176 0 .33.016.46.048a.762.762 0 0 1 .345.144.647.647 0 0 1 .207.3c.046.127.069.295.069.503v6.327ZM36.899 29.282c0 .495-.073.938-.218 1.33a2.665 2.665 0 0 1-.621.97c-.261.264-.575.464-.943.6a3.533 3.533 0 0 1-1.23.203c-.453 0-.863-.072-1.231-.215a2.798 2.798 0 0 1-.955-.612c-.26-.271-.464-.599-.61-.982a3.62 3.62 0 0 1-.218-1.294c0-.472.073-.9.219-1.282.145-.384.349-.708.61-.971.267-.272.586-.48.954-.623a3.356 3.356 0 0 1 1.23-.216c.452 0 .863.076 1.23.228a2.6 2.6 0 0 1 .944.623c.268.263.475.587.62.97.146.384.219.807.219 1.27Zm-4.025 0c0 .487.088.862.265 1.126a.884.884 0 0 0 .759.383.82.82 0 0 0 .736-.395c.176-.264.264-.635.264-1.114 0-.48-.088-.847-.264-1.103a.848.848 0 0 0-.748-.395.848.848 0 0 0-.747.395c-.177.256-.265.623-.265 1.103ZM37.853 26.454c.076-.024.195-.048.356-.072.169-.024.341-.036.518-.036.168 0 .318.012.448.036a.762.762 0 0 1 .345.143.647.647 0 0 1 .207.3c.054.12.08.28.08.48v2.576c0 .327.077.563.23.707.154.136.376.203.668.203a1.534 1.534 0 0 0 .69-.143v-4.194c.076-.024.195-.048.356-.072.169-.024.341-.036.518-.036.168 0 .318.012.448.036a.762.762 0 0 1 .345.143.647.647 0 0 1 .207.3c.054.12.08.28.08.48v3.642c0 .4-.16.7-.482.9-.269.175-.59.307-.966.395-.368.095-.77.143-1.208.143-.414 0-.797-.048-1.15-.143a2.517 2.517 0 0 1-.897-.444 1.98 1.98 0 0 1-.586-.767c-.138-.32-.207-.703-.207-1.15v-3.427ZM49.26 30.456c0 .607-.218 1.082-.655 1.426-.437.343-1.08.515-1.931.515-.322 0-.621-.024-.898-.072a2.717 2.717 0 0 1-.713-.215 1.407 1.407 0 0 1-.46-.384.91.91 0 0 1-.16-.539c0-.192.038-.352.114-.48.077-.135.17-.247.276-.335.223.128.476.244.76.348.29.096.624.143 1 .143.238 0 .418-.035.54-.107.13-.072.196-.168.196-.288 0-.112-.046-.2-.138-.264-.092-.064-.245-.116-.46-.155l-.345-.072c-.667-.136-1.165-.348-1.495-.635-.322-.296-.483-.715-.483-1.259 0-.295.061-.563.184-.802.123-.24.295-.44.517-.6.223-.16.487-.283.794-.371.314-.088.66-.132 1.035-.132.284 0 .548.024.793.072.253.04.472.104.656.192.184.087.33.203.437.347.107.136.16.3.16.491a1.046 1.046 0 0 1-.344.803 1.22 1.22 0 0 0-.276-.12 2.685 2.685 0 0 0-.402-.12 4.071 4.071 0 0 0-.449-.095 2.49 2.49 0 0 0-.402-.036c-.253 0-.449.032-.587.096-.138.056-.207.148-.207.275 0 .088.038.16.115.216.077.056.222.108.437.156l.356.084c.736.175 1.258.42 1.564.73.315.304.472.7.472 1.187ZM53.218 32.385c-.453 0-.874-.064-1.265-.191a2.969 2.969 0 0 1-1.012-.6 2.847 2.847 0 0 1-.679-.994c-.16-.4-.241-.867-.241-1.402 0-.527.08-.979.241-1.354.169-.384.387-.695.656-.935a2.46 2.46 0 0 1 .92-.54c.345-.12.697-.179 1.058-.179.406 0 .774.064 1.104.192.337.127.624.303.862.527.245.224.433.491.564.803.138.311.207.65.207 1.018 0 .272-.073.48-.219.624-.146.143-.349.235-.61.275l-2.84.444c.084.263.257.463.518.599.26.127.56.191.897.191.314 0 .61-.04.885-.12a2.9 2.9 0 0 0 .69-.299c.123.08.226.192.31.336a.886.886 0 0 1 .127.455c0 .36-.16.627-.483.803a2.487 2.487 0 0 1-.828.275 5.604 5.604 0 0 1-.862.072Zm-.322-4.71c-.184 0-.345.033-.483.097a.941.941 0 0 0-.322.251 1.03 1.03 0 0 0-.196.336c-.038.12-.061.244-.069.371l1.967-.335c-.023-.16-.108-.32-.253-.48-.146-.16-.36-.24-.644-.24Z"-->
+<!--                  fill="#fff"-->
+<!--                />-->
+<!--              </svg>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="block-four__signup&#45;&#45;close-block">-->
+<!--            <div class="block-four__signup&#45;&#45;close">-->
+<!--              <svg-->
+<!--                class="svg-close"-->
+<!--                viewBox="0 0 26 26"-->
+<!--                fill="none"-->
+<!--                xmlns="http://www.w3.org/2000/svg"-->
+<!--              >-->
+<!--                <path-->
+<!--                  d="M26 1.486 24.514 0 13 11.514 1.486 0 0 1.486 11.514 13 0 24.514 1.486 26 13 14.486 24.514 26 26 24.514 14.486 13 26 1.486Z"-->
+<!--                  fill="#BFBFBF"-->
+<!--                />-->
+<!--              </svg>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </section>-->
+<!--      </div>-->
+<!--    </section>-->
 
-    <section class="fifth-screen">
-      <div class="container block-five__container">
-        <div class="block-five">
-          <header class="block-five__header">Guests reviews</header>
-          <section class="block-five__img-section block-five__img--resort">
-            <img class="block-five__img" src="images/resort.png" alt="Resort" />
-            <div class="block-five__price desktop">From 250 USD</div>
-          </section>
-          <section class="block-five__caption block-five__caption--resort">
-            <p
-              class="block-five__caption--name block-five__caption--name--resort"
-            >
-              Ubud Bali Resort&SPA
-            </p>
-            <p
-              class="block-five__caption--location block-five__caption--location--resort"
-            >
-              Bali, Indonesia
-            </p>
-            <div class="block-five__caption--grade-block">
-              <div
-                class="block-five__caption--grade block-five__caption--grade--resort"
-              >
-                9,4
-              </div>
-              <p
-                class="block-five__caption--reviews block-five__caption--reviews--resort"
-              >
-                1324 reviews
-              </p>
-            </div>
-            <svg
-              class="block-five__caption--logo--svg-sprite"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <symbol id="account_circle" viewBox="0 0 64 64">
-                <path
-                  d="M32 5.33337C17.28 5.33337 5.33331 17.28 5.33331 32C5.33331 46.72 17.28 58.6667 32 58.6667C46.72 58.6667 58.6666 46.72 58.6666 32C58.6666 17.28 46.72 5.33337 32 5.33337ZM32 13.3334C36.4266 13.3334 40 16.9067 40 21.3334C40 25.76 36.4266 29.3334 32 29.3334C27.5733 29.3334 24 25.76 24 21.3334C24 16.9067 27.5733 13.3334 32 13.3334ZM32 51.2C25.3333 51.2 19.44 47.7867 16 42.6134C16.08 37.3067 26.6666 34.4 32 34.4C37.3066 34.4 47.92 37.3067 48 42.6134C44.56 47.7867 38.6666 51.2 32 51.2Z"
-                  fill="#BFBFBF"
-                />
-              </symbol>
-            </svg>
-            <div
-              class="block-five__caption--logo block-five__caption--logo--resort"
-            >
-              <svg
-                class="block-five__caption--logo--svg"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <use href="#account_circle" />
-              </svg>
-            </div>
-            <p
-              class="block-five__caption--review block-five__caption--review--resort"
-            >
-              Hanna Ivanova
-            </p>
-            <p
-              class="block-five__caption--location-review block-five__caption--location-review--resort"
-            >
-              &#127482;&#127462; Ukraine
-            </p>
-            <p
-              class="block-five__caption--text-review block-five__caption--text-review--resort"
-            >
-              Great location, really pleasant and clean rooms, but the thing
-              that makes this such a good place to stay are the staff. All of
-              the people are incredibly helpful and generous with their time and
-              advice.
-            </p>
-            <svg
-              class="block-five__caption--svg-navigation phone"
-              width="56"
-              height="8"
-              fill="none"
-              viewBox="0 0 56 8"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="4" cy="4" r="4" fill="#333" />
-              <circle cx="20" cy="4" r="3.5" stroke="#333" />
-              <circle cx="36" cy="4" r="3.5" stroke="#333" />
-              <circle cx="52" cy="4" r="3.5" stroke="#333" />
-            </svg>
-          </section>
-          <section
-            class="block-five__img-section block-five__img--hostel desktop"
-          >
-            <img
-              class="block-five__img desktop"
-              src="././images/hostel.png"
-              alt="Hostel"
-            />
-            <div class="block-five__price desktop">From 40 USD</div>
-          </section>
-          <section
-            class="block-five__caption block-five__caption--hostel desktop"
-          >
-            <p
-              class="block-five__caption--name block-five__caption--name--hostel desktop"
-            >
-              King Kong Hostel
-            </p>
-            <p
-              class="block-five__caption--location block-five__caption--location--hostel desktop"
-            >
-              Rotterdam, Netherlands
-            </p>
-            <div class="block-five__caption--grade-block desktop">
-              <div
-                class="block-five__caption--grade block-five__caption--grade--hostel desktop"
-              >
-                8,9
-              </div>
-              <p
-                class="block-five__caption--reviews block-five__caption--reviews--hostel desktop"
-              >
-                2016 reviews
-              </p>
-            </div>
-            <div
-              class="block-five__caption--logo block-five__caption--logo--hostel desktop"
-            >
-              <svg
-                class="block-five__caption--logo--svg"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <use href="#account_circle" />
-              </svg>
-            </div>
-            <p
-              class="block-five__caption--review block-five__caption--review--hostel desktop"
-            >
-              Adam Smith
-            </p>
-            <p
-              class="block-five__caption--location-review block-five__caption--location-review--hostel desktop"
-            >
-              &#127482;&#127474; USA
-            </p>
-            <p
-              class="block-five__caption--text-review block-five__caption--text-review--hostel desktop"
-            >
-              I've been in this hostel for a month and here is the best hostel
-              of all
-              <br />
-              Excellent management of excellent and ethical staff and bedrooms
-              Bathrooms are always clean and excellent
-              <br />
-              Most importantly, those who work here are kind and good-natured.
-            </p>
-          </section>
-          <section
-            class="block-five__img-section block-five__img--hotel desktop"
-          >
-            <div>
-              <img
-                class="block-five__img desktop"
-                src="././images/hotel.png"
-                alt="Hotel"
-              />
-              <div class="block-five__circle">
-                <svg
-                  class="block-five__arrow"
-                  width="9"
-                  height="21"
-                  viewBox="0 0 9 21"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M.941 19.823 7.1 11.612a2 2 0 0 0 0-2.4L.941 1"
-                    stroke="#383838"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div class="block-five__price--hotel desktop">From 100 USD</div>
-          </section>
-          <section
-            class="block-five__caption block-five__caption--hotel desktop"
-          >
-            <p
-              class="block-five__caption--name block-five__caption--name--hotel desktop"
-            >
-              Rokoko Hotel
-            </p>
-            <p
-              class="block-five__caption--location block-five__caption--location--hotel desktop"
-            >
-              Ourika, Marocco
-            </p>
-            <div class="block-five__caption--grade-block desktop desktop">
-              <div
-                class="block-five__caption--grade block-five__caption--grade--hotel desktop"
-              >
-                9,1
-              </div>
-              <p
-                class="block-five__caption--reviews block-five__caption--reviews--hotel desktop"
-              >
-                815 reviews
-              </p>
-            </div>
-            <div
-              class="block-five__caption--logo block-five__caption--logo--hotel desktop"
-            >
-              <svg
-                class="block-five__caption--logo--svg desktop"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <use href="#account_circle" />
-              </svg>
-            </div>
-            <p
-              class="block-five__caption--review block-five__caption--review--hotel desktop"
-            >
-              Anika Messer
-            </p>
-            <p
-              class="block-five__caption--location-review block-five__caption--location-review--hotel desktop"
-            >
-              &#127465;&#127466; Germany
-            </p>
-            <p
-              class="block-five__caption--text-review block-five__caption--text-review--hotel desktop"
-            >
-              Efficient, friendly, professional, and appropriately attentive.
-              Great hotel in a great location. Easy access to all the
-              surrounding historical sites. Staff is fantastic. Will definitely
-              stay at this location during my next stay in Marocco.
-            </p>
-          </section>
-        </div>
-      </div>
-      <div class="white-block phone container"></div>
-    </section>
+<!--    <section class="fifth-screen">-->
+<!--      <div class="container block-five__container">-->
+<!--        <div class="block-five">-->
+<!--          <header class="block-five__header">Guests reviews</header>-->
+<!--          <section class="block-five__img-section block-five__img&#45;&#45;resort">-->
+<!--            <img class="block-five__img" src="images/resort.png" alt="Resort" />-->
+<!--            <div class="block-five__price desktop">From 250 USD</div>-->
+<!--          </section>-->
+<!--          <section class="block-five__caption block-five__caption&#45;&#45;resort">-->
+<!--            <p-->
+<!--              class="block-five__caption&#45;&#45;name block-five__caption&#45;&#45;name&#45;&#45;resort"-->
+<!--            >-->
+<!--              Ubud Bali Resort&SPA-->
+<!--            </p>-->
+<!--            <p-->
+<!--              class="block-five__caption&#45;&#45;location block-five__caption&#45;&#45;location&#45;&#45;resort"-->
+<!--            >-->
+<!--              Bali, Indonesia-->
+<!--            </p>-->
+<!--            <div class="block-five__caption&#45;&#45;grade-block">-->
+<!--              <div-->
+<!--                class="block-five__caption&#45;&#45;grade block-five__caption&#45;&#45;grade&#45;&#45;resort"-->
+<!--              >-->
+<!--                9,4-->
+<!--              </div>-->
+<!--              <p-->
+<!--                class="block-five__caption&#45;&#45;reviews block-five__caption&#45;&#45;reviews&#45;&#45;resort"-->
+<!--              >-->
+<!--                1324 reviews-->
+<!--              </p>-->
+<!--            </div>-->
+<!--            <svg-->
+<!--              class="block-five__caption&#45;&#45;logo&#45;&#45;svg-sprite"-->
+<!--              xmlns="http://www.w3.org/2000/svg"-->
+<!--            >-->
+<!--              <symbol id="account_circle" viewBox="0 0 64 64">-->
+<!--                <path-->
+<!--                  d="M32 5.33337C17.28 5.33337 5.33331 17.28 5.33331 32C5.33331 46.72 17.28 58.6667 32 58.6667C46.72 58.6667 58.6666 46.72 58.6666 32C58.6666 17.28 46.72 5.33337 32 5.33337ZM32 13.3334C36.4266 13.3334 40 16.9067 40 21.3334C40 25.76 36.4266 29.3334 32 29.3334C27.5733 29.3334 24 25.76 24 21.3334C24 16.9067 27.5733 13.3334 32 13.3334ZM32 51.2C25.3333 51.2 19.44 47.7867 16 42.6134C16.08 37.3067 26.6666 34.4 32 34.4C37.3066 34.4 47.92 37.3067 48 42.6134C44.56 47.7867 38.6666 51.2 32 51.2Z"-->
+<!--                  fill="#BFBFBF"-->
+<!--                />-->
+<!--              </symbol>-->
+<!--            </svg>-->
+<!--            <div-->
+<!--              class="block-five__caption&#45;&#45;logo block-five__caption&#45;&#45;logo&#45;&#45;resort"-->
+<!--            >-->
+<!--              <svg-->
+<!--                class="block-five__caption&#45;&#45;logo&#45;&#45;svg"-->
+<!--                xmlns="http://www.w3.org/2000/svg"-->
+<!--              >-->
+<!--                <use href="#account_circle" />-->
+<!--              </svg>-->
+<!--            </div>-->
+<!--            <p-->
+<!--              class="block-five__caption&#45;&#45;review block-five__caption&#45;&#45;review&#45;&#45;resort"-->
+<!--            >-->
+<!--              Hanna Ivanova-->
+<!--            </p>-->
+<!--            <p-->
+<!--              class="block-five__caption&#45;&#45;location-review block-five__caption&#45;&#45;location-review&#45;&#45;resort"-->
+<!--            >-->
+<!--              &#127482;&#127462; Ukraine-->
+<!--            </p>-->
+<!--            <p-->
+<!--              class="block-five__caption&#45;&#45;text-review block-five__caption&#45;&#45;text-review&#45;&#45;resort"-->
+<!--            >-->
+<!--              Great location, really pleasant and clean rooms, but the thing-->
+<!--              that makes this such a good place to stay are the staff. All of-->
+<!--              the people are incredibly helpful and generous with their time and-->
+<!--              advice.-->
+<!--            </p>-->
+<!--            <svg-->
+<!--              class="block-five__caption&#45;&#45;svg-navigation phone"-->
+<!--              width="56"-->
+<!--              height="8"-->
+<!--              fill="none"-->
+<!--              viewBox="0 0 56 8"-->
+<!--              xmlns="http://www.w3.org/2000/svg"-->
+<!--            >-->
+<!--              <circle cx="4" cy="4" r="4" fill="#333" />-->
+<!--              <circle cx="20" cy="4" r="3.5" stroke="#333" />-->
+<!--              <circle cx="36" cy="4" r="3.5" stroke="#333" />-->
+<!--              <circle cx="52" cy="4" r="3.5" stroke="#333" />-->
+<!--            </svg>-->
+<!--          </section>-->
+<!--          <section-->
+<!--            class="block-five__img-section block-five__img&#45;&#45;hostel desktop"-->
+<!--          >-->
+<!--            <img-->
+<!--              class="block-five__img desktop"-->
+<!--              src="././images/hostel.png"-->
+<!--              alt="Hostel"-->
+<!--            />-->
+<!--            <div class="block-five__price desktop">From 40 USD</div>-->
+<!--          </section>-->
+<!--          <section-->
+<!--            class="block-five__caption block-five__caption&#45;&#45;hostel desktop"-->
+<!--          >-->
+<!--            <p-->
+<!--              class="block-five__caption&#45;&#45;name block-five__caption&#45;&#45;name&#45;&#45;hostel desktop"-->
+<!--            >-->
+<!--              King Kong Hostel-->
+<!--            </p>-->
+<!--            <p-->
+<!--              class="block-five__caption&#45;&#45;location block-five__caption&#45;&#45;location&#45;&#45;hostel desktop"-->
+<!--            >-->
+<!--              Rotterdam, Netherlands-->
+<!--            </p>-->
+<!--            <div class="block-five__caption&#45;&#45;grade-block desktop">-->
+<!--              <div-->
+<!--                class="block-five__caption&#45;&#45;grade block-five__caption&#45;&#45;grade&#45;&#45;hostel desktop"-->
+<!--              >-->
+<!--                8,9-->
+<!--              </div>-->
+<!--              <p-->
+<!--                class="block-five__caption&#45;&#45;reviews block-five__caption&#45;&#45;reviews&#45;&#45;hostel desktop"-->
+<!--              >-->
+<!--                2016 reviews-->
+<!--              </p>-->
+<!--            </div>-->
+<!--            <div-->
+<!--              class="block-five__caption&#45;&#45;logo block-five__caption&#45;&#45;logo&#45;&#45;hostel desktop"-->
+<!--            >-->
+<!--              <svg-->
+<!--                class="block-five__caption&#45;&#45;logo&#45;&#45;svg"-->
+<!--                xmlns="http://www.w3.org/2000/svg"-->
+<!--              >-->
+<!--                <use href="#account_circle" />-->
+<!--              </svg>-->
+<!--            </div>-->
+<!--            <p-->
+<!--              class="block-five__caption&#45;&#45;review block-five__caption&#45;&#45;review&#45;&#45;hostel desktop"-->
+<!--            >-->
+<!--              Adam Smith-->
+<!--            </p>-->
+<!--            <p-->
+<!--              class="block-five__caption&#45;&#45;location-review block-five__caption&#45;&#45;location-review&#45;&#45;hostel desktop"-->
+<!--            >-->
+<!--              &#127482;&#127474; USA-->
+<!--            </p>-->
+<!--            <p-->
+<!--              class="block-five__caption&#45;&#45;text-review block-five__caption&#45;&#45;text-review&#45;&#45;hostel desktop"-->
+<!--            >-->
+<!--              I've been in this hostel for a month and here is the best hostel-->
+<!--              of all-->
+<!--              <br />-->
+<!--              Excellent management of excellent and ethical staff and bedrooms-->
+<!--              Bathrooms are always clean and excellent-->
+<!--              <br />-->
+<!--              Most importantly, those who work here are kind and good-natured.-->
+<!--            </p>-->
+<!--          </section>-->
+<!--          <section-->
+<!--            class="block-five__img-section block-five__img&#45;&#45;hotel desktop"-->
+<!--          >-->
+<!--            <div>-->
+<!--              <img-->
+<!--                class="block-five__img desktop"-->
+<!--                src="././images/hotel.png"-->
+<!--                alt="Hotel"-->
+<!--              />-->
+<!--              <div class="block-five__circle">-->
+<!--                <svg-->
+<!--                  class="block-five__arrow"-->
+<!--                  width="9"-->
+<!--                  height="21"-->
+<!--                  viewBox="0 0 9 21"-->
+<!--                  fill="none"-->
+<!--                  xmlns="http://www.w3.org/2000/svg"-->
+<!--                >-->
+<!--                  <path-->
+<!--                    d="M.941 19.823 7.1 11.612a2 2 0 0 0 0-2.4L.941 1"-->
+<!--                    stroke="#383838"-->
+<!--                    stroke-width="2"-->
+<!--                  />-->
+<!--                </svg>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="block-five__price&#45;&#45;hotel desktop">From 100 USD</div>-->
+<!--          </section>-->
+<!--          <section-->
+<!--            class="block-five__caption block-five__caption&#45;&#45;hotel desktop"-->
+<!--          >-->
+<!--            <p-->
+<!--              class="block-five__caption&#45;&#45;name block-five__caption&#45;&#45;name&#45;&#45;hotel desktop"-->
+<!--            >-->
+<!--              Rokoko Hotel-->
+<!--            </p>-->
+<!--            <p-->
+<!--              class="block-five__caption&#45;&#45;location block-five__caption&#45;&#45;location&#45;&#45;hotel desktop"-->
+<!--            >-->
+<!--              Ourika, Marocco-->
+<!--            </p>-->
+<!--            <div class="block-five__caption&#45;&#45;grade-block desktop desktop">-->
+<!--              <div-->
+<!--                class="block-five__caption&#45;&#45;grade block-five__caption&#45;&#45;grade&#45;&#45;hotel desktop"-->
+<!--              >-->
+<!--                9,1-->
+<!--              </div>-->
+<!--              <p-->
+<!--                class="block-five__caption&#45;&#45;reviews block-five__caption&#45;&#45;reviews&#45;&#45;hotel desktop"-->
+<!--              >-->
+<!--                815 reviews-->
+<!--              </p>-->
+<!--            </div>-->
+<!--            <div-->
+<!--              class="block-five__caption&#45;&#45;logo block-five__caption&#45;&#45;logo&#45;&#45;hotel desktop"-->
+<!--            >-->
+<!--              <svg-->
+<!--                class="block-five__caption&#45;&#45;logo&#45;&#45;svg desktop"-->
+<!--                xmlns="http://www.w3.org/2000/svg"-->
+<!--              >-->
+<!--                <use href="#account_circle" />-->
+<!--              </svg>-->
+<!--            </div>-->
+<!--            <p-->
+<!--              class="block-five__caption&#45;&#45;review block-five__caption&#45;&#45;review&#45;&#45;hotel desktop"-->
+<!--            >-->
+<!--              Anika Messer-->
+<!--            </p>-->
+<!--            <p-->
+<!--              class="block-five__caption&#45;&#45;location-review block-five__caption&#45;&#45;location-review&#45;&#45;hotel desktop"-->
+<!--            >-->
+<!--              &#127465;&#127466; Germany-->
+<!--            </p>-->
+<!--            <p-->
+<!--              class="block-five__caption&#45;&#45;text-review block-five__caption&#45;&#45;text-review&#45;&#45;hotel desktop"-->
+<!--            >-->
+<!--              Efficient, friendly, professional, and appropriately attentive.-->
+<!--              Great hotel in a great location. Easy access to all the-->
+<!--              surrounding historical sites. Staff is fantastic. Will definitely-->
+<!--              stay at this location during my next stay in Marocco.-->
+<!--            </p>-->
+<!--          </section>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="white-block phone container"></div>-->
+<!--    </section>-->
 
-    <section class="sixth-screen">
-      <div class="block-six__background">
-        <div class="container__block-six container">
-          <section class="block-six__content">
-            <svg
-              class="block-six__header phone"
-              width="98"
-              height="19"
-              viewBox="0 0 98 19"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M.402 5.236a2.781 2.781 0 0 1-.275-.641A2.849 2.849 0 0 1 0 3.74c0-.556.12-.954.36-1.197.254-.242.578-.363.973-.363h9.225c.098.157.19.37.275.641.084.27.127.556.127.855 0 .556-.127.955-.381 1.197-.24.242-.557.363-.952.363H7.278v9.874a5.825 5.825 0 0 1-.74.129 7.45 7.45 0 0 1-.974.064 3.98 3.98 0 0 1-.867-.086 1.407 1.407 0 0 1-.614-.256 1.154 1.154 0 0 1-.38-.535c-.085-.228-.127-.527-.127-.897V5.236H.402ZM15.226 15.174a4.883 4.883 0 0 1-.677.129 6.522 6.522 0 0 1-.931.064c-.31 0-.593-.022-.847-.064a1.408 1.408 0 0 1-.613-.257c-.17-.128-.303-.3-.402-.513-.085-.228-.127-.52-.127-.876V7.245c0-.327.056-.605.17-.833a2.07 2.07 0 0 1 .528-.641c.226-.186.5-.35.825-.492a8.075 8.075 0 0 1 2.264-.663 7.14 7.14 0 0 1 1.227-.106c.677 0 1.213.135 1.608.406.395.256.593.684.593 1.282 0 .2-.029.399-.085.598a2.784 2.784 0 0 1-.212.513 9.948 9.948 0 0 0-1.82.171c-.295.057-.577.121-.845.193a3.238 3.238 0 0 0-.656.213v7.288ZM20.243 1.924c0-.542.176-.998.529-1.368.367-.37.846-.556 1.439-.556.592 0 1.065.185 1.417.556.367.37.55.826.55 1.368 0 .54-.183.997-.55 1.367-.352.37-.825.556-1.417.556-.593 0-1.072-.185-1.44-.556-.352-.37-.528-.826-.528-1.367Zm3.766 13.25c-.155.029-.388.065-.698.107-.296.057-.6.086-.91.086-.31 0-.592-.022-.846-.064a1.408 1.408 0 0 1-.614-.257c-.17-.128-.303-.3-.402-.513-.085-.228-.127-.52-.127-.876V4.958c.155-.028.381-.064.677-.106.31-.057.62-.086.931-.086.31 0 .585.021.825.064.254.043.466.128.635.257.17.128.296.306.38.534.1.214.149.499.149.855v8.698ZM31.017 4.488c.846 0 1.63.114 2.348.342.734.214 1.362.549 1.884 1.005.521.456.93 1.033 1.227 1.73.296.685.444 1.504.444 2.459 0 .912-.127 1.71-.38 2.393a4.794 4.794 0 0 1-1.08 1.732 4.447 4.447 0 0 1-1.693 1.025c-.648.228-1.375.342-2.179.342-.606 0-1.17-.092-1.692-.277v3.547a4.87 4.87 0 0 1-.677.128 5.26 5.26 0 0 1-.953.086c-.31 0-.592-.021-.846-.064a1.41 1.41 0 0 1-.613-.257 1.154 1.154 0 0 1-.381-.534c-.085-.214-.127-.499-.127-.855V7.032c0-.385.077-.699.233-.94.169-.243.395-.464.677-.663.437-.285.98-.513 1.629-.684.649-.171 1.375-.257 2.179-.257Zm.042 8.164c1.453 0 2.18-.876 2.18-2.628 0-.912-.184-1.589-.55-2.03-.353-.442-.868-.663-1.545-.663-.268 0-.508.035-.72.107a2.472 2.472 0 0 0-.55.213v4.702c.17.086.353.157.55.214.198.057.41.085.635.085ZM50.418 15.11a5.827 5.827 0 0 1-.74.129 7.451 7.451 0 0 1-.974.064 3.98 3.98 0 0 1-.867-.086 1.406 1.406 0 0 1-.614-.256 1.154 1.154 0 0 1-.38-.535c-.085-.228-.128-.527-.128-.897v-3.334h-4.062v4.915a5.827 5.827 0 0 1-.74.129 7.452 7.452 0 0 1-.974.064 3.98 3.98 0 0 1-.867-.086 1.406 1.406 0 0 1-.614-.256 1.153 1.153 0 0 1-.38-.535c-.085-.228-.128-.527-.128-.897V2.244c.155-.028.402-.064.74-.107.34-.057.664-.085.974-.085.325 0 .607.028.846.085.254.043.466.128.635.257.17.128.296.306.381.534.085.228.127.527.127.898v3.42h4.062V2.243c.155-.028.402-.064.74-.107.34-.057.664-.085.974-.085.325 0 .607.028.846.085.254.043.466.128.635.257.17.128.296.306.381.534.085.228.127.527.127.898V15.11ZM63.533 10.002c0 .884-.134 1.674-.402 2.373a4.74 4.74 0 0 1-1.142 1.73c-.48.47-1.058.827-1.735 1.07-.677.242-1.432.363-2.264.363-.833 0-1.587-.129-2.264-.385a5.168 5.168 0 0 1-1.756-1.09 5.101 5.101 0 0 1-1.122-1.753c-.268-.684-.402-1.453-.402-2.308 0-.84.134-1.603.402-2.287a4.88 4.88 0 0 1 1.122-1.73 5.006 5.006 0 0 1 1.756-1.112c.677-.257 1.431-.385 2.264-.385.832 0 1.587.136 2.264.406a4.796 4.796 0 0 1 1.735 1.112 4.74 4.74 0 0 1 1.142 1.73c.268.685.402 1.44.402 2.266Zm-7.405 0c0 .87.162 1.54.486 2.01.339.455.805.683 1.397.683s1.044-.235 1.354-.705c.324-.47.487-1.133.487-1.988s-.163-1.51-.487-1.966c-.324-.47-.783-.705-1.375-.705-.593 0-1.051.235-1.376.705-.324.456-.486 1.111-.486 1.966ZM65.288 4.958a4.86 4.86 0 0 1 .656-.128c.31-.043.627-.064.952-.064.31 0 .585.021.825.064.254.043.465.128.635.257.169.128.296.306.38.534.1.214.149.499.149.855v4.595c0 .584.14 1.004.423 1.26.282.243.691.364 1.227.364a2.909 2.909 0 0 0 1.27-.256v-7.48a4.86 4.86 0 0 1 .655-.129 6.97 6.97 0 0 1 .953-.064c.31 0 .585.021.825.064.254.043.465.128.634.257.17.128.297.306.381.534.099.214.148.499.148.855v6.497c0 .712-.296 1.247-.888 1.603-.494.313-1.086.548-1.778.705a9.062 9.062 0 0 1-2.221.257 8.284 8.284 0 0 1-2.116-.257 4.688 4.688 0 0 1-1.65-.79 3.547 3.547 0 0 1-1.08-1.368c-.253-.57-.38-1.254-.38-2.052V4.958ZM86.277 12.097c0 1.083-.402 1.93-1.206 2.543-.804.613-1.989.92-3.554.92a9.953 9.953 0 0 1-1.65-.13 5.12 5.12 0 0 1-1.313-.384 2.568 2.568 0 0 1-.846-.684 1.587 1.587 0 0 1-.296-.962c0-.341.07-.627.212-.854.14-.243.31-.442.507-.599.41.228.875.435 1.397.62.536.17 1.15.256 1.84.256.438 0 .77-.064.995-.192.24-.128.36-.3.36-.513 0-.2-.085-.356-.254-.47-.17-.114-.452-.207-.847-.278l-.634-.128c-1.228-.242-2.144-.62-2.75-1.133-.593-.527-.89-1.275-.89-2.244 0-.527.113-1.004.339-1.432.226-.427.543-.784.952-1.069.41-.285.896-.505 1.46-.662a7.267 7.267 0 0 1 1.904-.235c.522 0 1.009.043 1.46.128.466.071.868.185 1.206.342.339.157.607.363.804.62.198.242.296.534.296.876 0 .328-.063.613-.19.855a1.8 1.8 0 0 1-.444.577 2.274 2.274 0 0 0-.508-.214 5.065 5.065 0 0 0-.74-.213 7.707 7.707 0 0 0-.826-.171 4.728 4.728 0 0 0-.74-.065c-.466 0-.826.057-1.08.171-.253.1-.38.264-.38.492 0 .157.07.285.211.385.141.1.41.192.804.278l.656.15c1.354.313 2.313.747 2.878 1.303.578.541.867 1.247.867 2.116ZM93.557 15.538a7.663 7.663 0 0 1-2.328-.342 5.5 5.5 0 0 1-1.861-1.069c-.522-.47-.938-1.061-1.249-1.774-.296-.712-.444-1.546-.444-2.5 0-.94.148-1.746.444-2.415.31-.684.713-1.24 1.206-1.667a4.56 4.56 0 0 1 1.693-.962 6.061 6.061 0 0 1 1.946-.32c.748 0 1.425.113 2.032.341.62.228 1.15.542 1.586.94.452.4.797.877 1.037 1.432A4.32 4.32 0 0 1 98 9.02c0 .485-.134.855-.402 1.111-.268.257-.642.42-1.121.492l-5.226.79c.155.471.472.827.952 1.07.48.227 1.03.341 1.65.341.578 0 1.121-.07 1.63-.213.521-.157.944-.335 1.269-.535.225.143.416.342.57.599.156.256.234.527.234.812 0 .641-.296 1.118-.889 1.432-.451.242-.96.406-1.523.491-.565.086-1.094.129-1.587.129Zm-.593-8.4c-.338 0-.634.057-.888.171-.24.114-.438.264-.593.45-.155.17-.275.37-.36.598-.07.213-.112.434-.126.662l3.618-.598c-.043-.285-.198-.57-.466-.855-.268-.285-.663-.428-1.185-.428Z"
-                fill="#fff"
-              />
-            </svg>
-            <article
-              class="block-six__content--header block-six__content--header-about"
-            >
-              About
-            </article>
-            <article class="block-six__content--text-works desktop">
-              <a class="block-six__content--text" href="#"
-                >How Triphouse works</a
-              >
-            </article>
-            <article class="block-six__content--text-careers desktop">
-              <a class="block-six__content--text" href="#">Careers</a>
-            </article>
-            <article class="block-six__content--text-privacy desktop">
-              <a class="block-six__content--text" href="#">Privacy</a>
-            </article>
-            <article class="block-six__content--text-terms desktop">
-              <a class="block-six__content--text" href="#">Terms</a>
-            </article>
-            <article
-              class="block-six__content--header block-six__content--header-property"
-            >
-              Property types
-            </article>
-            <article class="block-six__content--text-houses desktop">
-              <a class="block-six__content--text" href="#">Guest houses</a>
-            </article>
-            <article class="block-six__content--text-hotels desktop">
-              <a class="block-six__content--text" href="#">Hotels</a>
-            </article>
-            <article class="block-six__content--text-apartments desktop">
-              <a class="block-six__content--text" href="#">Apartments</a>
-            </article>
-            <article class="block-six__content--text-villas desktop">
-              <a class="block-six__content--text" href="#">Villas</a>
-            </article>
-            <article class="block-six__content--text-homes desktop">
-              <a class="block-six__content--text" href="#">Holiday homes</a>
-            </article>
-            <article class="block-six__content--text-hostels desktop">
-              <a class="block-six__content--text" href="#">Hostels</a>
-            </article>
-            <article
-              class="block-six__content--header block-six__content--header-support"
-            >
-              Support
-            </article>
-            <article class="block-six__content--text-customer desktop">
-              <a class="block-six__content--text" href="#"
-                >Contact Customer Service</a
-              >
-            </article>
-            <article class="block-six__content--text-faq desktop">
-              <a class="block-six__content--text" href="#">FAQ</a>
-            </article>
-          </section>
-          <footer class="block-six__footer">
-            &copy; 2020 Triphouse, Inc. All rights reserved
-          </footer>
-        </div>
-      </div>
-    </section>
+<!--    <section class="sixth-screen">-->
+<!--      <div class="block-six__background">-->
+<!--        <div class="container__block-six container">-->
+<!--          <section class="block-six__content">-->
+<!--            <svg-->
+<!--              class="block-six__header phone"-->
+<!--              width="98"-->
+<!--              height="19"-->
+<!--              viewBox="0 0 98 19"-->
+<!--              fill="none"-->
+<!--              xmlns="http://www.w3.org/2000/svg"-->
+<!--            >-->
+<!--              <path-->
+<!--                d="M.402 5.236a2.781 2.781 0 0 1-.275-.641A2.849 2.849 0 0 1 0 3.74c0-.556.12-.954.36-1.197.254-.242.578-.363.973-.363h9.225c.098.157.19.37.275.641.084.27.127.556.127.855 0 .556-.127.955-.381 1.197-.24.242-.557.363-.952.363H7.278v9.874a5.825 5.825 0 0 1-.74.129 7.45 7.45 0 0 1-.974.064 3.98 3.98 0 0 1-.867-.086 1.407 1.407 0 0 1-.614-.256 1.154 1.154 0 0 1-.38-.535c-.085-.228-.127-.527-.127-.897V5.236H.402ZM15.226 15.174a4.883 4.883 0 0 1-.677.129 6.522 6.522 0 0 1-.931.064c-.31 0-.593-.022-.847-.064a1.408 1.408 0 0 1-.613-.257c-.17-.128-.303-.3-.402-.513-.085-.228-.127-.52-.127-.876V7.245c0-.327.056-.605.17-.833a2.07 2.07 0 0 1 .528-.641c.226-.186.5-.35.825-.492a8.075 8.075 0 0 1 2.264-.663 7.14 7.14 0 0 1 1.227-.106c.677 0 1.213.135 1.608.406.395.256.593.684.593 1.282 0 .2-.029.399-.085.598a2.784 2.784 0 0 1-.212.513 9.948 9.948 0 0 0-1.82.171c-.295.057-.577.121-.845.193a3.238 3.238 0 0 0-.656.213v7.288ZM20.243 1.924c0-.542.176-.998.529-1.368.367-.37.846-.556 1.439-.556.592 0 1.065.185 1.417.556.367.37.55.826.55 1.368 0 .54-.183.997-.55 1.367-.352.37-.825.556-1.417.556-.593 0-1.072-.185-1.44-.556-.352-.37-.528-.826-.528-1.367Zm3.766 13.25c-.155.029-.388.065-.698.107-.296.057-.6.086-.91.086-.31 0-.592-.022-.846-.064a1.408 1.408 0 0 1-.614-.257c-.17-.128-.303-.3-.402-.513-.085-.228-.127-.52-.127-.876V4.958c.155-.028.381-.064.677-.106.31-.057.62-.086.931-.086.31 0 .585.021.825.064.254.043.466.128.635.257.17.128.296.306.38.534.1.214.149.499.149.855v8.698ZM31.017 4.488c.846 0 1.63.114 2.348.342.734.214 1.362.549 1.884 1.005.521.456.93 1.033 1.227 1.73.296.685.444 1.504.444 2.459 0 .912-.127 1.71-.38 2.393a4.794 4.794 0 0 1-1.08 1.732 4.447 4.447 0 0 1-1.693 1.025c-.648.228-1.375.342-2.179.342-.606 0-1.17-.092-1.692-.277v3.547a4.87 4.87 0 0 1-.677.128 5.26 5.26 0 0 1-.953.086c-.31 0-.592-.021-.846-.064a1.41 1.41 0 0 1-.613-.257 1.154 1.154 0 0 1-.381-.534c-.085-.214-.127-.499-.127-.855V7.032c0-.385.077-.699.233-.94.169-.243.395-.464.677-.663.437-.285.98-.513 1.629-.684.649-.171 1.375-.257 2.179-.257Zm.042 8.164c1.453 0 2.18-.876 2.18-2.628 0-.912-.184-1.589-.55-2.03-.353-.442-.868-.663-1.545-.663-.268 0-.508.035-.72.107a2.472 2.472 0 0 0-.55.213v4.702c.17.086.353.157.55.214.198.057.41.085.635.085ZM50.418 15.11a5.827 5.827 0 0 1-.74.129 7.451 7.451 0 0 1-.974.064 3.98 3.98 0 0 1-.867-.086 1.406 1.406 0 0 1-.614-.256 1.154 1.154 0 0 1-.38-.535c-.085-.228-.128-.527-.128-.897v-3.334h-4.062v4.915a5.827 5.827 0 0 1-.74.129 7.452 7.452 0 0 1-.974.064 3.98 3.98 0 0 1-.867-.086 1.406 1.406 0 0 1-.614-.256 1.153 1.153 0 0 1-.38-.535c-.085-.228-.128-.527-.128-.897V2.244c.155-.028.402-.064.74-.107.34-.057.664-.085.974-.085.325 0 .607.028.846.085.254.043.466.128.635.257.17.128.296.306.381.534.085.228.127.527.127.898v3.42h4.062V2.243c.155-.028.402-.064.74-.107.34-.057.664-.085.974-.085.325 0 .607.028.846.085.254.043.466.128.635.257.17.128.296.306.381.534.085.228.127.527.127.898V15.11ZM63.533 10.002c0 .884-.134 1.674-.402 2.373a4.74 4.74 0 0 1-1.142 1.73c-.48.47-1.058.827-1.735 1.07-.677.242-1.432.363-2.264.363-.833 0-1.587-.129-2.264-.385a5.168 5.168 0 0 1-1.756-1.09 5.101 5.101 0 0 1-1.122-1.753c-.268-.684-.402-1.453-.402-2.308 0-.84.134-1.603.402-2.287a4.88 4.88 0 0 1 1.122-1.73 5.006 5.006 0 0 1 1.756-1.112c.677-.257 1.431-.385 2.264-.385.832 0 1.587.136 2.264.406a4.796 4.796 0 0 1 1.735 1.112 4.74 4.74 0 0 1 1.142 1.73c.268.685.402 1.44.402 2.266Zm-7.405 0c0 .87.162 1.54.486 2.01.339.455.805.683 1.397.683s1.044-.235 1.354-.705c.324-.47.487-1.133.487-1.988s-.163-1.51-.487-1.966c-.324-.47-.783-.705-1.375-.705-.593 0-1.051.235-1.376.705-.324.456-.486 1.111-.486 1.966ZM65.288 4.958a4.86 4.86 0 0 1 .656-.128c.31-.043.627-.064.952-.064.31 0 .585.021.825.064.254.043.465.128.635.257.169.128.296.306.38.534.1.214.149.499.149.855v4.595c0 .584.14 1.004.423 1.26.282.243.691.364 1.227.364a2.909 2.909 0 0 0 1.27-.256v-7.48a4.86 4.86 0 0 1 .655-.129 6.97 6.97 0 0 1 .953-.064c.31 0 .585.021.825.064.254.043.465.128.634.257.17.128.297.306.381.534.099.214.148.499.148.855v6.497c0 .712-.296 1.247-.888 1.603-.494.313-1.086.548-1.778.705a9.062 9.062 0 0 1-2.221.257 8.284 8.284 0 0 1-2.116-.257 4.688 4.688 0 0 1-1.65-.79 3.547 3.547 0 0 1-1.08-1.368c-.253-.57-.38-1.254-.38-2.052V4.958ZM86.277 12.097c0 1.083-.402 1.93-1.206 2.543-.804.613-1.989.92-3.554.92a9.953 9.953 0 0 1-1.65-.13 5.12 5.12 0 0 1-1.313-.384 2.568 2.568 0 0 1-.846-.684 1.587 1.587 0 0 1-.296-.962c0-.341.07-.627.212-.854.14-.243.31-.442.507-.599.41.228.875.435 1.397.62.536.17 1.15.256 1.84.256.438 0 .77-.064.995-.192.24-.128.36-.3.36-.513 0-.2-.085-.356-.254-.47-.17-.114-.452-.207-.847-.278l-.634-.128c-1.228-.242-2.144-.62-2.75-1.133-.593-.527-.89-1.275-.89-2.244 0-.527.113-1.004.339-1.432.226-.427.543-.784.952-1.069.41-.285.896-.505 1.46-.662a7.267 7.267 0 0 1 1.904-.235c.522 0 1.009.043 1.46.128.466.071.868.185 1.206.342.339.157.607.363.804.62.198.242.296.534.296.876 0 .328-.063.613-.19.855a1.8 1.8 0 0 1-.444.577 2.274 2.274 0 0 0-.508-.214 5.065 5.065 0 0 0-.74-.213 7.707 7.707 0 0 0-.826-.171 4.728 4.728 0 0 0-.74-.065c-.466 0-.826.057-1.08.171-.253.1-.38.264-.38.492 0 .157.07.285.211.385.141.1.41.192.804.278l.656.15c1.354.313 2.313.747 2.878 1.303.578.541.867 1.247.867 2.116ZM93.557 15.538a7.663 7.663 0 0 1-2.328-.342 5.5 5.5 0 0 1-1.861-1.069c-.522-.47-.938-1.061-1.249-1.774-.296-.712-.444-1.546-.444-2.5 0-.94.148-1.746.444-2.415.31-.684.713-1.24 1.206-1.667a4.56 4.56 0 0 1 1.693-.962 6.061 6.061 0 0 1 1.946-.32c.748 0 1.425.113 2.032.341.62.228 1.15.542 1.586.94.452.4.797.877 1.037 1.432A4.32 4.32 0 0 1 98 9.02c0 .485-.134.855-.402 1.111-.268.257-.642.42-1.121.492l-5.226.79c.155.471.472.827.952 1.07.48.227 1.03.341 1.65.341.578 0 1.121-.07 1.63-.213.521-.157.944-.335 1.269-.535.225.143.416.342.57.599.156.256.234.527.234.812 0 .641-.296 1.118-.889 1.432-.451.242-.96.406-1.523.491-.565.086-1.094.129-1.587.129Zm-.593-8.4c-.338 0-.634.057-.888.171-.24.114-.438.264-.593.45-.155.17-.275.37-.36.598-.07.213-.112.434-.126.662l3.618-.598c-.043-.285-.198-.57-.466-.855-.268-.285-.663-.428-1.185-.428Z"-->
+<!--                fill="#fff"-->
+<!--              />-->
+<!--            </svg>-->
+<!--            <article-->
+<!--              class="block-six__content&#45;&#45;header block-six__content&#45;&#45;header-about"-->
+<!--            >-->
+<!--              About-->
+<!--            </article>-->
+<!--            <article class="block-six__content&#45;&#45;text-works desktop">-->
+<!--              <a class="block-six__content&#45;&#45;text" href="#"-->
+<!--                >How Triphouse works</a-->
+<!--              >-->
+<!--            </article>-->
+<!--            <article class="block-six__content&#45;&#45;text-careers desktop">-->
+<!--              <a class="block-six__content&#45;&#45;text" href="#">Careers</a>-->
+<!--            </article>-->
+<!--            <article class="block-six__content&#45;&#45;text-privacy desktop">-->
+<!--              <a class="block-six__content&#45;&#45;text" href="#">Privacy</a>-->
+<!--            </article>-->
+<!--            <article class="block-six__content&#45;&#45;text-terms desktop">-->
+<!--              <a class="block-six__content&#45;&#45;text" href="#">Terms</a>-->
+<!--            </article>-->
+<!--            <article-->
+<!--              class="block-six__content&#45;&#45;header block-six__content&#45;&#45;header-property"-->
+<!--            >-->
+<!--              Property types-->
+<!--            </article>-->
+<!--            <article class="block-six__content&#45;&#45;text-houses desktop">-->
+<!--              <a class="block-six__content&#45;&#45;text" href="#">Guest houses</a>-->
+<!--            </article>-->
+<!--            <article class="block-six__content&#45;&#45;text-hotels desktop">-->
+<!--              <a class="block-six__content&#45;&#45;text" href="#">Hotels</a>-->
+<!--            </article>-->
+<!--            <article class="block-six__content&#45;&#45;text-apartments desktop">-->
+<!--              <a class="block-six__content&#45;&#45;text" href="#">Apartments</a>-->
+<!--            </article>-->
+<!--            <article class="block-six__content&#45;&#45;text-villas desktop">-->
+<!--              <a class="block-six__content&#45;&#45;text" href="#">Villas</a>-->
+<!--            </article>-->
+<!--            <article class="block-six__content&#45;&#45;text-homes desktop">-->
+<!--              <a class="block-six__content&#45;&#45;text" href="#">Holiday homes</a>-->
+<!--            </article>-->
+<!--            <article class="block-six__content&#45;&#45;text-hostels desktop">-->
+<!--              <a class="block-six__content&#45;&#45;text" href="#">Hostels</a>-->
+<!--            </article>-->
+<!--            <article-->
+<!--              class="block-six__content&#45;&#45;header block-six__content&#45;&#45;header-support"-->
+<!--            >-->
+<!--              Support-->
+<!--            </article>-->
+<!--            <article class="block-six__content&#45;&#45;text-customer desktop">-->
+<!--              <a class="block-six__content&#45;&#45;text" href="#"-->
+<!--                >Contact Customer Service</a-->
+<!--              >-->
+<!--            </article>-->
+<!--            <article class="block-six__content&#45;&#45;text-faq desktop">-->
+<!--              <a class="block-six__content&#45;&#45;text" href="#">FAQ</a>-->
+<!--            </article>-->
+<!--          </section>-->
+<!--          <footer class="block-six__footer">-->
+<!--            &copy; 2020 Triphouse, Inc. All rights reserved-->
+<!--          </footer>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
     <!--  <script type="module" src="scripts/learnFiles/lesson-10/mainLearn10.js"></script>-->
     <script type="module" src="scripts/main.js"></script>
     <script type="module" src="scripts/filter.js"></script>
